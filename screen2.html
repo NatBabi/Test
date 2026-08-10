@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EduAsset Manager - Repairs</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#1b1b1d",
+                        "inverse-primary": "#bec6e0",
+                        "surface-container-highest": "#e4e2e4",
+                        "surface-bright": "#fcf8fa",
+                        "on-tertiary-fixed-variant": "#574425",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#f3f0f2",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1b1b1d",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "on-tertiary-fixed": "#271901",
+                        "tertiary": "#000000",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#d3e4fe",
+                        "tertiary-container": "#271901",
+                        "surface-container-high": "#eae7e9",
+                        "tertiary-fixed-dim": "#dec29a",
+                        "on-surface-variant": "#45464d",
+                        "outline": "#76777d",
+                        "primary-container": "#131b2e",
+                        "surface": "#fcf8fa",
+                        "surface-tint": "#565e74",
+                        "outline-variant": "#c6c6cd",
+                        "surface-container-low": "#f6f3f5",
+                        "on-primary": "#ffffff",
+                        "background": "#fcf8fa",
+                        "surface-variant": "#e4e2e4",
+                        "tertiary-fixed": "#fcdeb5",
+                        "on-tertiary-container": "#98805d",
+                        "on-primary-container": "#7c839b",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "secondary-container": "#d0e1fb",
+                        "secondary": "#505f76",
+                        "inverse-surface": "#303032",
+                        "primary": "#000000",
+                        "on-secondary-fixed": "#0b1c30",
+                        "surface-container": "#f0edef",
+                        "primary-fixed-dim": "#bec6e0",
+                        "on-primary-fixed": "#131b2e",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "primary-fixed": "#dae2fd",
+                        "on-secondary-container": "#54647a",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#dcd9db"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-gap": "16px",
+                        "grid-gutter": "20px",
+                        "container-padding": "24px",
+                        "table-cell-padding": "12px 16px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "title-sm": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "mono-data": ["monospace"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "display-lg": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "title-sm": ["18px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "mono-data": ["13px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #F8FAFC; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .icon-fill { font-variation-settings: 'FILL' 1; }
+        
+        /* Custom scrollbar for minimalism */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased h-screen flex overflow-hidden selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- SideNavBar Component -->
+<nav class="hidden md:flex flex-col bg-surface-container-low border-r border-outline-variant fixed left-0 top-0 h-full w-[280px] p-4 z-40">
+<div class="flex items-center gap-3 mb-8 px-2">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-primary-container icon-fill">inventory</span>
+</div>
+<div>
+<h1 class="text-headline-md font-headline-md font-bold text-primary">Inventory Control</h1>
+<p class="text-label-caps font-label-caps text-on-surface-variant">Tech Services Dept</p>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary hover:bg-primary/90 transition-colors py-2 px-4 rounded-lg font-body-sm text-body-sm font-semibold mb-6 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add</span>
+            New Asset Intake
+        </button>
+<div class="flex-1 flex flex-col gap-1">
+<!-- Nav Item 1: Dashboard -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-body-sm font-body-sm font-medium">Dashboard</span>
+</a>
+<!-- Nav Item 2: Intake & Triage -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="text-body-sm font-body-sm font-medium">Intake &amp; Triage</span>
+</a>
+<!-- Nav Item 3: Repairs (ACTIVE) -->
+<a class="flex items-center gap-3 px-3 py-2.5 bg-secondary-container text-on-secondary-container font-bold rounded-lg scale-[0.99] duration-150 transition-all" href="#">
+<span class="material-symbols-outlined icon-fill" data-icon="build">build</span>
+<span class="text-body-sm font-body-sm">Repairs</span>
+</a>
+<!-- Nav Item 4: Assignment Engine -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="assignment_ind">assignment_ind</span>
+<span class="text-body-sm font-body-sm font-medium">Assignment Engine</span>
+</a>
+</div>
+<div class="mt-auto pt-4 border-t border-outline-variant flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="help">help</span>
+<span class="text-label-caps font-label-caps">Support</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="person_search">person_search</span>
+<span class="text-label-caps font-label-caps">Role Switcher</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-[280px] h-full overflow-y-auto w-full max-w-[1440px] mx-auto bg-[#F8FAFC]">
+<!-- Mobile Top Nav Fallback (Simple) -->
+<header class="md:hidden flex items-center justify-between p-4 bg-surface border-b border-outline-variant sticky top-0 z-30">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">inventory</span>
+<h1 class="text-title-sm font-title-sm font-bold text-on-surface">Repairs</h1>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant">menu</button>
+</header>
+<div class="p-4 md:p-container-padding flex flex-col gap-stack-gap">
+<!-- Header Section -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-2">
+<div>
+<h2 class="text-display-lg font-display-lg text-on-surface tracking-tight">Repair Tracking</h2>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">Manage active device repairs and donor parts inventory.</p>
+</div>
+<div class="flex gap-2">
+<button class="bg-surface text-on-surface border border-outline-variant hover:bg-surface-container-low px-4 py-2 rounded-lg text-body-sm font-body-sm font-medium transition-shadow hover:shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)] flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">print</span>
+                        Print Manifest
+                    </button>
+</div>
+</div>
+<!-- Dashboard Summary Cards (Asset Cards) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-grid-gutter">
+<div class="bg-surface border border-outline-variant rounded-lg p-4 flex flex-col justify-between">
+<div class="flex justify-between items-start mb-2">
+<span class="text-label-caps font-label-caps text-on-surface-variant">Devices in Repair</span>
+<span class="material-symbols-outlined text-outline">laptop_mac</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-display-lg font-display-lg text-on-surface">42</span>
+<span class="text-body-sm font-body-sm text-error bg-error-container/30 px-2 rounded-full">+5 today</span>
+</div>
+</div>
+<div class="bg-surface border border-outline-variant rounded-lg p-4 flex flex-col justify-between">
+<div class="flex justify-between items-start mb-2">
+<span class="text-label-caps font-label-caps text-on-surface-variant">Awaiting Parts</span>
+<span class="material-symbols-outlined text-outline">hourglass_empty</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-display-lg font-display-lg text-on-surface">18</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant">12 screens needed</span>
+</div>
+</div>
+<div class="bg-surface border border-outline-variant rounded-lg p-4 flex flex-col justify-between">
+<div class="flex justify-between items-start mb-2">
+<span class="text-label-caps font-label-caps text-on-surface-variant">Donor Devices Available</span>
+<span class="material-symbols-outlined text-outline">recycling</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-display-lg font-display-lg text-on-surface">104</span>
+<span class="text-body-sm font-body-sm text-secondary bg-secondary-container/50 px-2 rounded-full">High stock</span>
+</div>
+</div>
+</div>
+<!-- Main Layout: Bento Grid Style -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-grid-gutter mt-2">
+<!-- Left Column: Active Repairs Table (Takes up more space) -->
+<div class="lg:col-span-8 bg-surface border border-outline-variant rounded-xl overflow-hidden flex flex-col shadow-sm">
+<div class="p-4 border-b border-outline-variant flex justify-between items-center bg-[#F8FAFC]">
+<h3 class="text-title-sm font-title-sm text-on-surface">Active Repairs</h3>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+<input class="pl-9 pr-4 py-1.5 border border-outline-variant rounded-lg text-body-sm font-body-sm w-[200px] focus:outline-none focus:border-[#3B82F6] focus:ring-1 focus:ring-[#3B82F6] transition-all bg-surface" placeholder="Search Tag or S/N..." type="text"/>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-[#F8FAFC] border-b border-outline-variant">
+<th class="p-table-cell-padding text-label-caps font-label-caps text-secondary font-medium">Asset Tag</th>
+<th class="p-table-cell-padding text-label-caps font-label-caps text-secondary font-medium">Model</th>
+<th class="p-table-cell-padding text-label-caps font-label-caps text-secondary font-medium">Issue</th>
+<th class="p-table-cell-padding text-label-caps font-label-caps text-secondary font-medium">Status</th>
+<th class="p-table-cell-padding text-label-caps font-label-caps text-secondary font-medium text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="text-body-sm font-body-sm text-on-surface divide-y divide-[#F1F5F9]">
+<tr class="hover:bg-[#F8FAFC] transition-colors group">
+<td class="p-table-cell-padding font-mono-data text-mono-data">#AS-9921</td>
+<td class="p-table-cell-padding">Chromebook 3100</td>
+<td class="p-table-cell-padding text-on-surface-variant">Cracked Screen</td>
+<td class="p-table-cell-padding">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold bg-[#FEF3C7] text-[#92400E]">In Progress</span>
+</td>
+<td class="p-table-cell-padding text-right">
+<button class="text-primary hover:text-[#3B82F6] p-1 rounded transition-colors" title="Update Status">
+<span class="material-symbols-outlined text-[20px]">edit_note</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-[#F8FAFC] transition-colors group">
+<td class="p-table-cell-padding font-mono-data text-mono-data">#AS-9844</td>
+<td class="p-table-cell-padding">iPad 9th Gen</td>
+<td class="p-table-cell-padding text-on-surface-variant">Battery Depleted</td>
+<td class="p-table-cell-padding">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold bg-[#FEE2E2] text-[#991B1B]">Awaiting Parts</span>
+</td>
+<td class="p-table-cell-padding text-right">
+<button class="text-primary hover:text-[#3B82F6] p-1 rounded transition-colors" title="Update Status">
+<span class="material-symbols-outlined text-[20px]">edit_note</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-[#F8FAFC] transition-colors group">
+<td class="p-table-cell-padding font-mono-data text-mono-data">#AS-1022</td>
+<td class="p-table-cell-padding">ThinkPad T14</td>
+<td class="p-table-cell-padding text-on-surface-variant">Missing Keys (A,S,D)</td>
+<td class="p-table-cell-padding">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold bg-[#E0E7FF] text-[#3730A3]">Triage</span>
+</td>
+<td class="p-table-cell-padding text-right">
+<button class="text-primary hover:text-[#3B82F6] p-1 rounded transition-colors" title="Update Status">
+<span class="material-symbols-outlined text-[20px]">edit_note</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-[#F8FAFC] transition-colors group">
+<td class="p-table-cell-padding font-mono-data text-mono-data">#AS-8830</td>
+<td class="p-table-cell-padding">Chromebook 3100</td>
+<td class="p-table-cell-padding text-on-surface-variant">Won't Power On</td>
+<td class="p-table-cell-padding">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold bg-[#FEE2E2] text-[#991B1B]">Awaiting Parts</span>
+</td>
+<td class="p-table-cell-padding text-right">
+<button class="text-primary hover:text-[#3B82F6] p-1 rounded transition-colors" title="Update Status">
+<span class="material-symbols-outlined text-[20px]">edit_note</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Right Column: Log Repair Form & Donor Parts -->
+<div class="lg:col-span-4 flex flex-col gap-grid-gutter">
+<!-- Log Repair Form -->
+<div class="bg-surface border border-outline-variant rounded-xl p-5 shadow-sm">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary">build_circle</span>
+<h3 class="text-title-sm font-title-sm text-on-surface">Log Repair Action</h3>
+</div>
+<form class="flex flex-col gap-4">
+<div>
+<label class="block text-body-sm font-body-sm font-bold text-on-surface mb-1">Target Asset Tag</label>
+<input class="w-full px-3 py-2 border border-outline-variant rounded-lg text-body-sm font-body-sm focus:outline-none focus:border-[#3B82F6] focus:ring-1 focus:ring-[#3B82F6] transition-all" placeholder="e.g. #AS-9921" type="text"/>
+</div>
+<div class="p-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg">
+<label class="block text-body-sm font-body-sm font-bold text-on-surface mb-1">Link Donor Device (Optional)</label>
+<p class="text-[12px] text-on-surface-variant mb-2 leading-tight">If salvaging parts, enter the donor asset tag to track component cannibalization.</p>
+<input class="w-full px-3 py-2 border border-outline-variant rounded-lg text-body-sm font-body-sm focus:outline-none focus:border-[#3B82F6] focus:ring-1 focus:ring-[#3B82F6] transition-all bg-surface" placeholder="Donor Asset Tag" type="text"/>
+<div class="mt-3">
+<label class="block text-body-sm font-body-sm font-bold text-on-surface mb-1">Part Harvested</label>
+<select class="w-full px-3 py-2 border border-outline-variant rounded-lg text-body-sm font-body-sm focus:outline-none focus:border-[#3B82F6] focus:ring-1 focus:ring-[#3B82F6] bg-surface">
+<option value="">Select Part...</option>
+<option value="screen">LCD Screen Panel</option>
+<option value="keyboard">Keyboard Assembly</option>
+<option value="battery">Battery</option>
+<option value="motherboard">Motherboard</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block text-body-sm font-body-sm font-bold text-on-surface mb-1">Resolution Notes</label>
+<textarea class="w-full px-3 py-2 border border-outline-variant rounded-lg text-body-sm font-body-sm focus:outline-none focus:border-[#3B82F6] focus:ring-1 focus:ring-[#3B82F6] transition-all resize-none" placeholder="Brief description of fix..." rows="2"></textarea>
+</div>
+<div class="flex gap-2 mt-2">
+<button class="flex-1 bg-surface text-primary border border-outline-variant hover:bg-[#F8FAFC] py-2 rounded-lg text-body-sm font-body-sm font-semibold transition-colors" type="button">
+                                    Mark Unrepairable
+                                </button>
+<button class="flex-1 bg-[#3B82F6] text-on-primary hover:bg-[#2563EB] py-2 rounded-lg text-body-sm font-body-sm font-semibold transition-colors shadow-sm" type="button">
+                                    Complete Repair
+                                </button>
+</div>
+</form>
+</div>
+<!-- Donor Parts Inventory Mini-Table -->
+<div class="bg-surface border border-outline-variant rounded-xl overflow-hidden shadow-sm flex-1">
+<div class="p-4 border-b border-outline-variant bg-[#F8FAFC] flex justify-between items-center">
+<h3 class="text-body-md font-body-md font-semibold text-on-surface">Harvested Parts</h3>
+<button class="text-label-caps font-label-caps text-[#3B82F6] hover:underline">View All</button>
+</div>
+<div class="p-2">
+<table class="w-full text-left border-collapse">
+<tbody class="text-[13px] font-body-sm text-on-surface divide-y divide-[#F1F5F9]">
+<tr class="hover:bg-[#F8FAFC]">
+<td class="py-2 px-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-outline">desktop_windows</span>
+                                            CB 3100 Screen
+                                        </td>
+<td class="py-2 px-2 text-right font-medium">12</td>
+</tr>
+<tr class="hover:bg-[#F8FAFC]">
+<td class="py-2 px-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-outline">keyboard</span>
+                                            iPad 9th Logic Brd
+                                        </td>
+<td class="py-2 px-2 text-right font-medium">4</td>
+</tr>
+<tr class="hover:bg-[#F8FAFC]">
+<td class="py-2 px-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-outline">battery_charging_full</span>
+                                            T14 Battery (Good)
+                                        </td>
+<td class="py-2 px-2 text-right font-medium text-error">2</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>
