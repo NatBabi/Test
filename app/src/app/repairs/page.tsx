@@ -216,7 +216,7 @@ export default function Page() {
 </div>
 <div>
 <label className="block text-body-sm font-body-sm font-bold text-on-surface mb-1">Resolution Notes</label>
-<textarea className="w-full px-3 py-2 border border-outline-variant rounded-lg text-body-sm font-body-sm focus:outline-none focus:border-[#3B82F6] focus:ring-1 focus:ring-[#3B82F6] transition-all resize-none" placeholder="Brief description of fix..." rows="2"></textarea>
+<textarea className="w-full px-3 py-2 border border-outline-variant rounded-lg text-body-sm font-body-sm focus:outline-none focus:border-[#3B82F6] focus:ring-1 focus:ring-[#3B82F6] transition-all resize-none" placeholder="Brief description of fix..." rows={2}></textarea>
 </div>
 <div className="flex gap-2 mt-2">
 <button className="flex-1 bg-surface text-primary border border-outline-variant hover:bg-[#F8FAFC] py-2 rounded-lg text-body-sm font-body-sm font-semibold transition-colors" type="button">

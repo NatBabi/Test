@@ -140,7 +140,7 @@ export default function Page() {
 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
 
 <label className="cursor-pointer">
-<input checked="" className="peer sr-only" name="condition" type="radio"/>
+<input defaultChecked className="peer sr-only" name="condition" type="radio"/>
 <div className="border border-outline-variant rounded-lg p-4 text-center hover:bg-surface-container-low transition-colors peer-checked:border-[#3B82F6] peer-checked:bg-secondary-fixed peer-checked:text-[#0b1c30]">
 <span className="material-symbols-outlined mb-2 block">check_circle</span>
 <span className="text-body-sm font-body-sm font-bold block">Healthy</span>
@@ -170,7 +170,7 @@ export default function Page() {
 </div>
 <div className="mb-6">
 <label className="block text-body-sm font-body-sm font-bold text-on-surface mb-2" htmlFor="notes">Triage Notes (Optional)</label>
-<textarea className="w-full p-3 rounded-lg border border-outline-variant focus:border-[#3B82F6] focus:ring-2 focus:ring-[#3B82F6]/20 transition-all text-body-md font-body-md resize-none" id="notes" placeholder="Enter details regarding damage or specific issues..." rows="3"></textarea>
+<textarea className="w-full p-3 rounded-lg border border-outline-variant focus:border-[#3B82F6] focus:ring-2 focus:ring-[#3B82F6]/20 transition-all text-body-md font-body-md resize-none" id="notes" placeholder="Enter details regarding damage or specific issues..." rows={3}></textarea>
 </div>
 <div className="flex justify-end gap-3">
 <button className="px-5 py-2 text-primary font-body-sm text-body-sm hover:bg-surface-container-low rounded-lg transition-colors">Clear</button>
