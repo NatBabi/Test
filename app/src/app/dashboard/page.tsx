@@ -26,8 +26,10 @@ export default function DashboardPage() {
   const [stats, setStats] = useState<DeviceStats>(demoStats);
   const [activity, setActivity] = useState<IntakeLog[]>(demoActivity);
   const [loading, setLoading] = useState(true);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     async function fetchData() {
       try {
         const [statsData, activityData] = await Promise.all([
@@ -241,7 +243,7 @@ export default function DashboardPage() {
                       </span>
                     </p>
                     <span className="text-label-caps font-label-caps text-outline mt-1 block">
-                      {timeAgo(log.created_at)}
+                      {mounted ? timeAgo(log.created_at) : '...'}
                     </span>
                   </div>
                 </div>
