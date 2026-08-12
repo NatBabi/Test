@@ -82,3 +82,8 @@ variants.txt
 
 # Ignore server uploads
 server/uploads/
+
+# Ignore AI Assistant folders
+.claude/
+.gemini/
+.impeccable/
