@@ -19,6 +19,7 @@ export const useAppContext = () => useContext(AppContext);
 export default function AppShell({ children }: { children: ReactNode }) {
   const [currentRole, setCurrentRole] = useState('director');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
   return (
     <AppContext.Provider value={{ currentRole, setCurrentRole }}>
@@ -31,7 +32,12 @@ export default function AppShell({ children }: { children: ReactNode }) {
         </div>
 
         {/* Side Navigation */}
-        <SideNavBar currentRole={currentRole} onRoleChange={setCurrentRole} />
+        <SideNavBar 
+          currentRole={currentRole} 
+          onRoleChange={setCurrentRole} 
+          isCollapsed={isCollapsed}
+          onToggleCollapse={() => setIsCollapsed(!isCollapsed)}
+        />
 
         {/* Mobile overlay */}
         {mobileMenuOpen && (
@@ -42,7 +48,7 @@ export default function AppShell({ children }: { children: ReactNode }) {
         )}
 
         {/* Main content area */}
-        <div className="flex-1 flex flex-col min-h-screen md:ml-[280px]">
+        <div className={`flex-1 flex flex-col min-h-screen transition-all duration-300 ${isCollapsed ? 'md:ml-[88px]' : 'md:ml-[280px]'}`}>
           <TopNavBar
             currentRole={currentRole}
             onMobileMenuToggle={() => setMobileMenuOpen(!mobileMenuOpen)}

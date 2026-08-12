@@ -26,32 +26,46 @@ const roles = [
 interface SideNavBarProps {
   currentRole: string;
   onRoleChange: (role: string) => void;
+  isCollapsed: boolean;
+  onToggleCollapse: () => void;
 }
 
-export default function SideNavBar({ currentRole, onRoleChange }: SideNavBarProps) {
+export default function SideNavBar({ currentRole, onRoleChange, isCollapsed, onToggleCollapse }: SideNavBarProps) {
   const pathname = usePathname();
   const [showRoleSwitcher, setShowRoleSwitcher] = useState(false);
 
   return (
-    <nav className="hidden md:flex flex-col glass border-r border-white/40 fixed left-0 top-0 h-full w-[280px] p-4 z-40 transition-all duration-300">
+    <nav className={`hidden md:flex flex-col glass border-r border-white/40 fixed left-0 top-0 h-full ${isCollapsed ? 'w-[88px]' : 'w-[280px]'} p-4 z-40 transition-all duration-300`}>
+      {/* Collapse Toggle */}
+      <button 
+        onClick={onToggleCollapse}
+        className="absolute -right-3 top-8 bg-white border border-outline-variant/30 text-on-surface-variant hover:text-primary rounded-full w-6 h-6 flex items-center justify-center shadow-md z-50 transition-all hover:scale-110"
+        title={isCollapsed ? "Expand Sidebar" : "Collapse Sidebar"}
+      >
+        <span className="material-symbols-outlined text-[16px] leading-none">{isCollapsed ? 'chevron_right' : 'chevron_left'}</span>
+      </button>
+
       {/* Header */}
-      <div className="flex flex-col items-center gap-2 mb-6 px-2 group cursor-pointer text-center mt-2">
+      <div className="flex flex-col items-center gap-2 mb-6 px-2 group cursor-pointer text-center mt-2 overflow-hidden">
         <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center shrink-0 shadow-md group-hover:shadow-glow transition-all duration-300">
           <span className="material-symbols-outlined text-white text-[28px]" style={{ fontVariationSettings: "'FILL' 1" }}>domain</span>
         </div>
-        <div>
-          <h1 className="text-title font-title-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary leading-tight tracking-tight mt-1">ITAPS</h1>
-          <p className="text-[10px] font-label-caps text-on-surface-variant/70 tracking-widest uppercase mt-0.5">Tech Services Dept</p>
-        </div>
+        {!isCollapsed && (
+          <div className="animate-fade-in-up whitespace-nowrap">
+            <h1 className="text-title font-title-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary leading-tight tracking-tight mt-1">ITAPS</h1>
+            <p className="text-[10px] font-label-caps text-on-surface-variant/70 tracking-widest uppercase mt-0.5">Tech Services Dept</p>
+          </div>
+        )}
       </div>
 
       {/* CTA */}
       <Link
         href="/intake"
-        className="w-full bg-gradient-to-r from-primary to-secondary text-white py-3.5 px-4 rounded-xl font-label-caps font-bold mb-6 flex items-center justify-center gap-2 shadow-glow hover:-translate-y-0.5 active:scale-95 transition-all duration-200"
+        className={`w-full bg-gradient-to-r from-primary to-secondary text-white py-3.5 px-4 rounded-xl font-label-caps font-bold mb-6 flex items-center justify-center gap-2 shadow-glow hover:-translate-y-0.5 active:scale-95 transition-all duration-200 ${isCollapsed ? 'px-0' : ''}`}
+        title="New Asset Intake"
       >
         <span className="material-symbols-outlined text-[20px]">add_circle</span>
-        New Asset Intake
+        {!isCollapsed && <span className="whitespace-nowrap">New Asset Intake</span>}
       </Link>
 
       {/* Navigation */}
@@ -66,7 +80,8 @@ export default function SideNavBar({ currentRole, onRoleChange }: SideNavBarProp
                 isActive
                   ? 'bg-primary/10 text-primary font-bold'
                   : 'text-on-surface-variant/80 hover:bg-white/40 hover:text-on-surface'
-              }`}
+              } ${isCollapsed ? 'justify-center px-0' : ''}`}
+              title={isCollapsed ? item.label : undefined}
             >
               <span
                 className={`material-symbols-outlined text-[20px] transition-transform duration-200 group-hover:scale-110 ${isActive ? 'text-primary' : ''}`}
@@ -74,7 +89,7 @@ export default function SideNavBar({ currentRole, onRoleChange }: SideNavBarProp
               >
                 {item.icon}
               </span>
-              <span className="text-label-caps font-label-caps tracking-wide">{item.label}</span>
+              {!isCollapsed && <span className="text-label-caps font-label-caps tracking-wide whitespace-nowrap">{item.label}</span>}
             </Link>
           );
         })}
@@ -86,10 +101,11 @@ export default function SideNavBar({ currentRole, onRoleChange }: SideNavBarProp
           <a
             key={item.label}
             href={item.href}
-            className="flex items-center gap-3 px-4 py-2 text-on-surface-variant/80 hover:bg-white/40 hover:text-on-surface transition-all rounded-lg group"
+            className={`flex items-center gap-3 px-4 py-2 text-on-surface-variant/80 hover:bg-white/40 hover:text-on-surface transition-all rounded-lg group ${isCollapsed ? 'justify-center px-0' : ''}`}
+            title={isCollapsed ? item.label : undefined}
           >
             <span className="material-symbols-outlined text-[18px] group-hover:rotate-12 transition-transform">{item.icon}</span>
-            <span className="text-label-caps font-label-caps">{item.label}</span>
+            {!isCollapsed && <span className="text-label-caps font-label-caps whitespace-nowrap">{item.label}</span>}
           </a>
         ))}
 
@@ -97,17 +113,22 @@ export default function SideNavBar({ currentRole, onRoleChange }: SideNavBarProp
         <div className="relative mt-2">
           <button
             onClick={() => setShowRoleSwitcher(!showRoleSwitcher)}
-            className="w-full flex items-center gap-3 px-4 py-2.5 bg-surface/50 border border-outline-variant/20 text-on-surface transition-all rounded-lg shadow-sm hover:shadow-soft-sm group hover:-translate-y-0.5"
+            className={`w-full flex items-center gap-3 px-4 py-2.5 bg-surface/50 border border-outline-variant/20 text-on-surface transition-all rounded-lg shadow-sm hover:shadow-soft-sm group hover:-translate-y-0.5 ${isCollapsed ? 'justify-center px-0' : ''}`}
+            title="Switch Context"
           >
             <span className="material-symbols-outlined text-[18px] text-primary">person_search</span>
-            <span className="text-label-caps font-label-caps text-left flex-1">Role: <span className="text-primary ml-1">{roles.find(r => r.id === currentRole)?.label || 'Switcher'}</span></span>
-            <span className="material-symbols-outlined text-[16px] text-outline group-hover:text-primary transition-colors">
-              {showRoleSwitcher ? 'expand_less' : 'expand_more'}
-            </span>
+            {!isCollapsed && (
+              <>
+                <span className="text-label-caps font-label-caps text-left flex-1 whitespace-nowrap">Role: <span className="text-primary ml-1">{roles.find(r => r.id === currentRole)?.label || 'Switcher'}</span></span>
+                <span className="material-symbols-outlined text-[16px] text-outline group-hover:text-primary transition-colors">
+                  {showRoleSwitcher ? 'expand_less' : 'expand_more'}
+                </span>
+              </>
+            )}
           </button>
 
           {showRoleSwitcher && (
-            <div className="absolute bottom-[110%] left-0 right-0 mb-2 glass-dark border border-white/20 rounded-2xl shadow-xl p-2 z-50 animate-fade-in-up">
+            <div className={`absolute bottom-[110%] left-0 mb-2 glass-dark border border-white/20 rounded-2xl shadow-xl p-2 z-50 animate-fade-in-up ${isCollapsed ? 'w-48 -ml-2' : 'right-0'}`}>
               <p className="text-[9px] font-label-caps text-white/40 px-3 py-1.5 mb-1 tracking-widest uppercase">Switch Context</p>
               {roles.map((role) => (
                 <button
@@ -123,7 +144,7 @@ export default function SideNavBar({ currentRole, onRoleChange }: SideNavBarProp
                   }`}
                 >
                   <span className={`material-symbols-outlined text-[16px] transition-transform group-hover:scale-110 ${currentRole === role.id ? 'text-primary-light' : ''}`}>{role.icon}</span>
-                  <span className="text-body-sm font-body-sm flex-1">{role.label}</span>
+                  <span className="text-body-sm font-body-sm flex-1 whitespace-nowrap">{role.label}</span>
                   {currentRole === role.id && (
                     <span className="material-symbols-outlined text-[14px] text-primary-light">check</span>
                   )}

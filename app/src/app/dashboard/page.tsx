@@ -74,16 +74,16 @@ export default function DashboardPage() {
   return (
     <div className="space-y-grid-gutter animate-fade-in-up">
       {/* Quick Scan & Header Bar */}
-      <div className="glass rounded-2xl p-4 shadow-soft-sm flex flex-col xl:flex-row justify-between items-start xl:items-center gap-4">
+      <div className="glass rounded-2xl p-4 shadow-soft-sm flex flex-wrap justify-between items-center gap-4">
         <div>
-          <h2 className="text-display-lg font-display-lg text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary leading-tight">Command Center</h2>
+          <h2 className="text-display-lg font-display-lg text-primary leading-tight">Command Center</h2>
           <p className="text-body-sm font-body-sm text-outline mt-1 tracking-wide">
             Summer Engine Operations • High-speed visual triage active
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-3 w-full xl:w-auto">
-          <form onSubmit={handleScan} className="relative w-full sm:w-80 hover-lift shrink-0">
+        <div className="flex flex-col sm:flex-row flex-wrap gap-3 w-full lg:w-auto">
+          <form onSubmit={handleScan} className="relative w-full sm:w-80 hover-lift">
             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
               <span className="material-symbols-outlined text-outline">barcode_scanner</span>
             </div>
@@ -125,7 +125,7 @@ export default function DashboardPage() {
             </div>
           </div>
           <div className="relative z-10">
-            <span className="text-display-lg font-display-lg text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary block">
+              <span className="text-display-lg font-display-lg text-primary block">
               {loading ? '—' : stats.total.toLocaleString()}
             </span>
             <span className="text-label-caps text-success flex items-center gap-1 mt-2">
@@ -181,11 +181,11 @@ export default function DashboardPage() {
 
         {/* Warranty Coverage */}
         <div className="glass rounded-2xl p-6 flex flex-col justify-between shadow-soft-sm hover-lift relative overflow-hidden group">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-bl-full -mr-16 -mt-16 transition-transform group-hover:scale-110"></div>
+          <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -mr-16 -mt-16 transition-transform group-hover:scale-110"></div>
           <div className="flex justify-between items-start mb-6 relative z-10">
             <span className="text-label-caps text-outline font-bold tracking-widest">Warranty Cover</span>
-            <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center">
-              <span className="material-symbols-outlined text-[20px] text-blue-600">verified_user</span>
+            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+              <span className="material-symbols-outlined text-[20px] text-primary">verified_user</span>
             </div>
           </div>
           <div className="relative z-10">
@@ -203,13 +203,13 @@ export default function DashboardPage() {
       {/* Main Split Section */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-grid-gutter">
         {/* Chart Area */}
-        <section className="lg:col-span-2 glass rounded-3xl p-6 md:p-8 flex flex-col h-[420px] shadow-soft-sm">
+        <section className="lg:col-span-2 glass rounded-3xl p-6 md:p-8 flex flex-col min-h-[420px] shadow-soft-sm">
           <div className="flex justify-between items-center mb-8">
             <div>
               <h3 className="text-title-sm font-title-sm text-on-surface">Summer Turnaround</h3>
               <p className="text-label-caps text-outline mt-1">DAILY PROCESSING VOLUME</p>
             </div>
-            <div className="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center cursor-help hover:bg-outline-variant transition-colors">
+            <div className="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center cursor-help hover:bg-outline-variant transition-colors" title="Shows the daily processing volume of triaged assets over the last 4 days." aria-label="Chart information">
               <span className="material-symbols-outlined text-[20px] text-on-surface-variant">analytics</span>
             </div>
           </div>
@@ -249,7 +249,7 @@ export default function DashboardPage() {
         </section>
 
         {/* Activity Feed */}
-        <section className="glass rounded-3xl p-6 md:p-8 flex flex-col h-[420px] shadow-soft-sm">
+        <section className="glass rounded-3xl p-6 md:p-8 flex flex-col min-h-[420px] shadow-soft-sm">
           <div className="flex justify-between items-center mb-6">
             <h3 className="text-title-sm font-title-sm text-on-surface">Live Activity</h3>
             <button className="text-label-caps text-primary hover:text-secondary hover:bg-primary/5 px-3 py-1.5 rounded-full transition-colors">
