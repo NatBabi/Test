@@ -148,3 +148,6 @@ vite.config.ts.timestamp-*
 .impeccable/
 .vscode/
 .angular/   
+
+
+.server/uploads/
