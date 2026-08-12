@@ -76,9 +76,9 @@ src/plugins/impeccable-live.client.ts
 # Impeccable AI Generated Files
 cleanup.txt
 variants.txt
-
-# Ignore all Markdown files (like DESIGN.md, PRODUCT.md)
+.impeccable/
 *.md
-
-# Exception: Do NOT ignore the README file (Recommended)
 !README.md
+
+# Ignore server uploads
+server/uploads/
