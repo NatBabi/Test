@@ -19,11 +19,11 @@ const demoParts: HarvestedPart[] = [
 ];
 
 const statusBadge: Record<string, { bg: string; label: string }> = {
-  triage: { bg: 'bg-[#E0E7FF] text-[#3730A3]', label: 'Triage' },
+  triage: { bg: 'bg-[#E0E7FF] text-[#312E81]', label: 'Triage' },
   in_progress: { bg: 'bg-[#FEF3C7] text-[#92400E]', label: 'In Progress' },
   awaiting_parts: { bg: 'bg-[#FEE2E2] text-[#991B1B]', label: 'Awaiting Parts' },
-  completed: { bg: 'bg-[#DCFCE7] text-[#166534]', label: 'Completed' },
-  unrepairable: { bg: 'bg-[#F1F5F9] text-[#475569]', label: 'Unrepairable' },
+  completed: { bg: 'bg-[#D1FAE5] text-[#065F46]', label: 'Completed' },
+  unrepairable: { bg: 'bg-[#FEE2E2] text-[#991B1B]', label: 'Unrepairable' },
 };
 
 const partIcons: Record<string, string> = {
@@ -116,7 +116,7 @@ export default function RepairsPage() {
           <h2 className="text-display-lg font-display-lg text-transparent bg-clip-text bg-gradient-to-r from-on-surface to-on-surface-variant tracking-tight">Repair Tracking</h2>
           <p className="text-body-md font-body-md text-on-surface-variant mt-1 tracking-wide">Manage active device repairs and donor parts inventory.</p>
         </div>
-        <button className="bg-white text-on-surface border border-outline-variant/30 hover:text-primary px-5 py-2.5 rounded-xl text-label-caps font-bold transition-all shadow-soft-sm hover:shadow-soft-md hover-lift flex items-center gap-2">
+        <button className="glass text-on-surface hover:text-primary px-5 py-2.5 rounded-xl text-label-caps font-bold transition-all shadow-soft-sm hover:shadow-soft-md hover-lift flex items-center gap-2 border border-outline-variant/30">
           <span className="material-symbols-outlined text-[20px]">print</span>
           Print Manifest
         </button>
@@ -134,7 +134,7 @@ export default function RepairsPage() {
 
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-grid-gutter">
-        <div className="bg-white border border-outline-variant/30 rounded-3xl p-6 flex flex-col justify-between shadow-soft-sm hover-lift group">
+        <div className="glass rounded-3xl p-6 flex flex-col justify-between shadow-soft-sm hover-lift group">
           <div className="flex justify-between items-start mb-6">
             <span className="text-label-caps text-outline font-bold tracking-widest">Devices in Repair</span>
             <div className="w-10 h-10 rounded-xl bg-error/10 flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -146,7 +146,7 @@ export default function RepairsPage() {
             <span className="text-label-caps text-error bg-error/10 px-2 py-1 rounded-md">active</span>
           </div>
         </div>
-        <div className="bg-white border border-outline-variant/30 rounded-3xl p-6 flex flex-col justify-between shadow-soft-sm hover-lift group">
+        <div className="glass rounded-3xl p-6 flex flex-col justify-between shadow-soft-sm hover-lift group">
           <div className="flex justify-between items-start mb-6">
             <span className="text-label-caps text-outline font-bold tracking-widest">Awaiting Parts</span>
             <div className="w-10 h-10 rounded-xl bg-warning/10 flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -160,7 +160,7 @@ export default function RepairsPage() {
             </span>
           </div>
         </div>
-        <div className="bg-white border border-outline-variant/30 rounded-3xl p-6 flex flex-col justify-between shadow-soft-sm hover-lift group">
+        <div className="glass rounded-3xl p-6 flex flex-col justify-between shadow-soft-sm hover-lift group">
           <div className="flex justify-between items-start mb-6">
             <span className="text-label-caps text-outline font-bold tracking-widest">Donor Devices Available</span>
             <div className="w-10 h-10 rounded-xl bg-success/10 flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -179,8 +179,8 @@ export default function RepairsPage() {
       {/* Main Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-grid-gutter">
         {/* Active Repairs Table */}
-        <div className="lg:col-span-8 bg-white border border-outline-variant/30 rounded-3xl overflow-hidden flex flex-col shadow-soft-sm hover-lift transition-all">
-          <div className="p-6 border-b border-outline-variant/30 flex justify-between items-center bg-white">
+        <div className="lg:col-span-8 glass rounded-3xl overflow-hidden flex flex-col shadow-soft-sm hover-lift transition-all">
+          <div className="p-6 border-b border-outline-variant/30 flex justify-between items-center bg-transparent">
             <h3 className="text-title-sm font-title-sm text-on-surface">Active Repairs</h3>
             <div className="relative group">
               <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-[20px] group-focus-within:text-primary transition-colors">search</span>
@@ -195,7 +195,7 @@ export default function RepairsPage() {
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="bg-white border-b border-outline-variant/30">
+                <tr className="border-b border-outline-variant/30">
                   <th className="p-4 text-label-caps font-label-caps text-outline font-bold tracking-wider">Asset Tag</th>
                   <th className="p-4 text-label-caps font-label-caps text-outline font-bold tracking-wider">Model</th>
                   <th className="p-4 text-label-caps font-label-caps text-outline font-bold tracking-wider">Issue</th>
@@ -259,7 +259,7 @@ export default function RepairsPage() {
         {/* Right Column: Repair Form & Parts */}
         <div className="lg:col-span-4 flex flex-col gap-grid-gutter">
           {/* Log Repair Form */}
-          <div className="bg-white border border-outline-variant/30 rounded-3xl p-6 shadow-soft-sm hover-lift transition-all">
+          <div className="glass rounded-3xl p-6 shadow-soft-sm hover-lift transition-all">
             <div className="flex items-center gap-3 mb-6">
               <span className="material-symbols-outlined text-[28px] text-primary">build_circle</span>
               <h3 className="text-title-sm font-title-sm text-on-surface">Log Repair Action</h3>
@@ -312,7 +312,7 @@ export default function RepairsPage() {
               <div className="flex gap-3 mt-2">
                 <button
                   onClick={handleLinkDonor}
-                  className="flex-1 bg-white text-secondary border border-outline-variant/30 hover:border-secondary/50 py-3 rounded-xl font-bold transition-all shadow-soft-sm hover:shadow-soft-md hover-lift"
+                  className="flex-1 glass text-secondary border border-outline-variant/30 hover:border-secondary/50 py-3 rounded-xl font-bold transition-all shadow-soft-sm hover:shadow-soft-md hover-lift"
                 >
                   Link Donor
                 </button>
@@ -332,7 +332,7 @@ export default function RepairsPage() {
           </div>
 
           {/* Harvested Parts */}
-          <div className="bg-white border border-outline-variant/30 rounded-3xl overflow-hidden shadow-soft-sm hover-lift transition-all flex-1 flex flex-col">
+          <div className="glass rounded-3xl overflow-hidden shadow-soft-sm hover-lift transition-all flex-1 flex flex-col">
             <div className="p-6 border-b border-outline-variant/30 flex justify-between items-center">
               <h3 className="text-title-sm font-bold text-on-surface">Harvested Parts</h3>
               <button className="text-label-caps font-bold text-secondary hover:text-primary transition-colors">View All</button>

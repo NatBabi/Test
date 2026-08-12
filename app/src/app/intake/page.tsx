@@ -4,10 +4,10 @@ import { useState, useRef, useCallback } from 'react';
 import { devicesApi, intakeApi, importApi, type DeviceWithHistory, type PipelineStats } from '@/lib/api';
 
 const conditionOptions = [
-  { value: 'healthy', label: 'Healthy', icon: 'check_circle', activeClass: 'peer-checked:border-[#3B82F6] peer-checked:bg-secondary-fixed peer-checked:text-[#0b1c30]' },
-  { value: 'minor_damage', label: 'Minor Damage', icon: 'build_circle', activeClass: 'peer-checked:border-[#eab308] peer-checked:bg-[#fef08a] peer-checked:text-[#713f12]' },
-  { value: 'major_damage', label: 'Major Damage', icon: 'error', activeClass: 'peer-checked:border-[#ba1a1a] peer-checked:bg-error-container peer-checked:text-[#93000a]' },
-  { value: 'needs_powerwash', label: 'Needs Powerwash', icon: 'mop', activeClass: 'peer-checked:border-[#8b5cf6] peer-checked:bg-[#ede9fe] peer-checked:text-[#4c1d95]' },
+  { value: 'healthy', label: 'Healthy', icon: 'check_circle', activeClass: 'peer-checked:border-[#10B981] peer-checked:bg-[#D1FAE5] peer-checked:text-[#065F46]' },
+  { value: 'minor_damage', label: 'Minor Damage', icon: 'build_circle', activeClass: 'peer-checked:border-[#F59E0B] peer-checked:bg-[#FEF3C7] peer-checked:text-[#92400E]' },
+  { value: 'major_damage', label: 'Major Damage', icon: 'error', activeClass: 'peer-checked:border-[#EF4444] peer-checked:bg-[#FEE2E2] peer-checked:text-[#991B1B]' },
+  { value: 'needs_powerwash', label: 'Needs Powerwash', icon: 'mop', activeClass: 'peer-checked:border-[#7C3AED] peer-checked:bg-[#F3E8FF] peer-checked:text-[#6B21A8]' },
 ];
 
 const pipelineSteps = [
@@ -129,7 +129,7 @@ export default function IntakePage() {
         {/* Left Column */}
         <div className="lg:col-span-8 flex flex-col gap-stack-gap">
           {/* Search Bar */}
-          <section className="bg-white border border-outline-variant/30 rounded-3xl p-6 md:p-8 shadow-soft-sm hover-lift relative group overflow-visible z-20">
+          <section className="glass rounded-3xl p-6 md:p-8 shadow-soft-sm hover-lift relative group overflow-visible z-20">
             <label className="block text-body-md font-body-md font-bold text-on-surface mb-3 tracking-wide">Serial Number / Asset Tag Search</label>
             <div className={`relative transition-all duration-500 rounded-2xl ${searchQuery ? 'shadow-soft-md' : 'shadow-glow'}`}>
               <span className="material-symbols-outlined absolute left-5 top-1/2 -translate-y-1/2 text-outline text-[24px] group-focus-within:text-primary transition-colors">barcode_scanner</span>
@@ -164,7 +164,7 @@ export default function IntakePage() {
             <div className="animate-fade-in-up">
               <section className="grid grid-cols-1 md:grid-cols-2 gap-stack-gap">
                 {/* Device Info Card */}
-                <div className="bg-white border border-outline-variant/30 rounded-3xl p-6 shadow-soft-sm relative overflow-hidden hover-lift">
+                <div className="glass rounded-3xl p-6 shadow-soft-sm relative overflow-hidden hover-lift">
                   <div className="absolute top-0 right-0 p-4 opacity-10">
                     <span className="material-symbols-outlined text-[64px]">laptop_chromebook</span>
                   </div>
@@ -201,7 +201,7 @@ export default function IntakePage() {
                 </div>
 
                 {/* Assignment History Card */}
-                <div className="bg-white border border-outline-variant/30 rounded-3xl p-6 shadow-soft-sm hover-lift">
+                <div className="glass rounded-3xl p-6 shadow-soft-sm hover-lift">
                   <h3 className="text-title-sm font-title-sm text-on-surface mb-4 border-b border-outline-variant/30 pb-3 flex items-center gap-2">
                     <span className="material-symbols-outlined text-secondary">history</span>
                     Assignment History
@@ -232,7 +232,7 @@ export default function IntakePage() {
 
               {/* Condition Assessment Form */}
               {!submitSuccess ? (
-                <section className="bg-white border border-outline-variant/30 rounded-3xl p-6 md:p-8 shadow-soft-sm hover-lift mt-6">
+                <section className="glass rounded-3xl p-6 md:p-8 shadow-soft-sm hover-lift mt-6">
                   <h3 className="text-title-sm font-title-sm text-primary mb-5">Condition Assessment</h3>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
                     {conditionOptions.map((opt) => (
@@ -279,8 +279,8 @@ export default function IntakePage() {
                   </div>
                 </section>
               ) : (
-                <section className="bg-[#F0FDF4] border border-[#86EFAC] rounded-3xl p-6 md:p-8 flex items-center gap-5 shadow-soft-sm mt-6 animate-fade-in-up">
-                  <span className="material-symbols-outlined text-[32px] text-[#166534]" style={{ fontVariationSettings: "'FILL' 1" }}>task_alt</span>
+                <section className="bg-[#D1FAE5] border border-[#10B981]/20 rounded-3xl p-6 md:p-8 flex items-center gap-5 shadow-soft-sm mt-6 animate-fade-in-up">
+                  <span className="material-symbols-outlined text-[32px] text-[#065F46]" style={{ fontVariationSettings: "'FILL' 1" }}>task_alt</span>
                   <div>
                     <h3 className="text-title-sm font-title-sm text-[#166534]">Triage Submitted Successfully</h3>
                     <p className="text-body-sm text-[#166534]/80 mt-1">
@@ -289,7 +289,7 @@ export default function IntakePage() {
                   </div>
                   <button
                     onClick={() => { setSearchResult(null); setSearchQuery(''); setSubmitSuccess(false); }}
-                    className="ml-auto px-6 py-3 bg-[#166534] text-white rounded-xl font-bold shadow-sm hover:-translate-y-0.5 hover:shadow-md transition-all active:scale-95"
+                    className="ml-auto px-6 py-3 bg-[#065F46] text-white rounded-xl font-bold shadow-soft-sm hover:shadow-soft-md hover-lift transition-all"
                   >
                     Scan Next Device
                   </button>
@@ -302,7 +302,7 @@ export default function IntakePage() {
         {/* Right Column */}
         <div className="lg:col-span-4 flex flex-col gap-stack-gap">
           {/* Pipeline Stepper */}
-          <section className="bg-white border border-outline-variant/30 rounded-3xl p-6 shadow-soft-sm hover-lift">
+          <section className="glass rounded-3xl p-6 shadow-soft-sm hover-lift">
             <h3 className="text-title-sm font-title-sm text-primary mb-6">Current Pipeline</h3>
             <div className="relative">
               <div className="absolute left-5 top-4 bottom-4 w-0.5 bg-surface-variant" />
@@ -338,7 +338,7 @@ export default function IntakePage() {
           </section>
 
           {/* Batch CSV Import */}
-          <section className="bg-white border border-outline-variant/30 rounded-3xl p-6 shadow-soft-sm hover-lift flex flex-col justify-center items-center text-center">
+          <section className="glass rounded-3xl p-6 shadow-soft-sm hover-lift flex flex-col justify-center items-center text-center">
             <div className="w-12 h-12 bg-secondary-fixed text-on-secondary-fixed rounded-full flex items-center justify-center mb-4">
               <span className="material-symbols-outlined">upload_file</span>
             </div>

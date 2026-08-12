@@ -25,8 +25,8 @@ const demoProposed: ProposedAssignment[] = [
 
 const ruleBadgeColors: Record<number, string> = {
   1: 'bg-primary/10 text-primary',
-  2: 'bg-surface-tint/10 text-surface-tint',
-  3: 'bg-error-container text-on-error-container',
+  2: 'bg-secondary/10 text-secondary',
+  3: 'bg-[#FEE2E2] text-[#991B1B]',
 };
 
 export default function AssignmentsPage() {
@@ -127,7 +127,7 @@ export default function AssignmentsPage() {
             Configure allocation rules and batch assign devices to student rosters.
           </p>
         </div>
-        <button className="bg-white text-on-surface border border-outline-variant/30 hover:text-primary px-5 py-2.5 rounded-xl font-label-caps text-label-caps shadow-soft-sm hover:shadow-soft-md hover-lift transition-all flex items-center gap-2 font-bold">
+        <button className="glass text-on-surface hover:text-primary px-5 py-2.5 rounded-xl font-label-caps text-label-caps shadow-soft-sm hover:shadow-soft-md hover-lift transition-all flex items-center gap-2 font-bold border border-outline-variant/30">
           <span className="material-symbols-outlined text-[20px]">qr_code_scanner</span>
           Asset Tag Generator
         </button>
@@ -137,7 +137,7 @@ export default function AssignmentsPage() {
         {/* Left Column: Configuration & Engine */}
         <div className="xl:col-span-4 flex flex-col gap-stack-gap">
           {/* Allocation Rules */}
-          <section className="bg-white border border-outline-variant/30 rounded-3xl p-6 md:p-8 shadow-soft-sm hover-lift">
+          <section className="glass rounded-3xl p-6 md:p-8 shadow-soft-sm hover-lift">
             <div className="flex items-center justify-between mb-6">
               <h3 className="text-title-sm font-title-sm text-on-surface flex items-center gap-2">
                 <span className="material-symbols-outlined text-secondary">rule_folder</span>
@@ -187,7 +187,7 @@ export default function AssignmentsPage() {
           </section>
 
           {/* Engine Control */}
-          <section className="bg-white border border-outline-variant/30 rounded-3xl p-6 md:p-8 shadow-soft-sm relative overflow-hidden group hover-lift transition-all">
+          <section className="glass rounded-3xl p-6 md:p-8 shadow-soft-sm relative overflow-hidden group hover-lift transition-all">
             <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:scale-110 transition-transform duration-700">
               <span className="material-symbols-outlined text-[120px] text-primary">memory</span>
             </div>
@@ -258,8 +258,8 @@ export default function AssignmentsPage() {
 
         {/* Right Column: Proposed Assignments Table */}
         <div className="xl:col-span-8">
-          <section className="bg-white border border-outline-variant/30 rounded-3xl shadow-soft-sm h-full flex flex-col hover-lift transition-all">
-            <div className="p-6 md:p-8 border-b border-outline-variant/30 flex justify-between items-center bg-white rounded-t-3xl">
+          <section className="glass rounded-3xl shadow-soft-sm h-full flex flex-col hover-lift transition-all">
+            <div className="p-6 md:p-8 border-b border-outline-variant/30 flex justify-between items-center bg-transparent rounded-t-3xl">
               <div>
                 <h3 className="text-title-sm font-title-sm text-on-surface">Proposed Assignments Preview</h3>
                 <p className="text-body-sm font-body-sm text-on-surface-variant mt-1">
@@ -298,10 +298,10 @@ export default function AssignmentsPage() {
               </div>
             )}
 
-            <div className="overflow-x-auto flex-1 bg-white">
+            <div className="overflow-x-auto flex-1 bg-transparent">
               <table className="w-full text-left border-collapse">
                 <thead>
-                  <tr className="bg-white border-b border-outline-variant/30">
+                  <tr className="border-b border-outline-variant/30">
                     <th className="p-4 text-label-caps font-bold text-outline tracking-wider">Student ID</th>
                     <th className="p-4 text-label-caps font-bold text-outline tracking-wider">Name</th>
                     <th className="p-4 text-label-caps font-bold text-outline tracking-wider">Grade</th>
@@ -352,7 +352,7 @@ export default function AssignmentsPage() {
 
             {/* Pagination */}
             {proposed.length > 0 && (
-              <div className="p-5 mt-auto border-t border-outline-variant/30 bg-white rounded-b-3xl flex justify-between items-center">
+              <div className="p-5 mt-auto border-t border-outline-variant/30 bg-transparent rounded-b-3xl flex justify-between items-center">
                 <span className="text-label-caps font-bold text-outline">
                   SHOWING {page * pageSize + 1}–{Math.min((page + 1) * pageSize, proposed.length)} OF {proposed.length}
                 </span>

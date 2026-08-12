@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-12T06:40:00Z",
+  "title": "Design System: ITAPS",
+  "extensions": {
+    "colorMeta": {
+      "primary": { "role": "primary", "displayName": "Electric Indigo", "canonical": "#4F46E5", "tonalRamp": ["#312E81", "#3730A3", "#4338CA", "#4F46E5", "#6366F1", "#818CF8", "#A5B4FC", "#C7D2FE", "#E0E7FF", "#EEF2FF"] },
+      "secondary": { "role": "secondary", "displayName": "Vibrant Violet", "canonical": "#7C3AED", "tonalRamp": ["#4C1D95", "#5B21B6", "#6D28D9", "#7C3AED", "#8B5CF6", "#A78BFA", "#C4B5FD", "#DDD6FE", "#EDE9FE", "#F5F3FF"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Page headers and primary dashboard metrics." },
+      "headline": { "displayName": "Headline", "purpose": "Section headers and major card titles." },
+      "title": { "displayName": "Title", "purpose": "Sub-section headers and modal titles." },
+      "body": { "displayName": "Body", "purpose": "Primary table data, form inputs, and descriptive text." },
+      "label": { "displayName": "Label", "purpose": "Table headers, status pills, and small UI hints." }
+    },
+    "shadows": [
+      { "name": "soft-sm", "value": "0 2px 4px 0 rgba(148, 163, 184, 0.1), 0 1px 2px -1px rgba(148, 163, 184, 0.1)", "purpose": "Standard card elevation and floating inputs." },
+      { "name": "soft-md", "value": "0 4px 6px -1px rgba(148, 163, 184, 0.1), 0 2px 4px -2px rgba(148, 163, 184, 0.1)", "purpose": "Active hovered states and dropdowns." },
+      { "name": "glow", "value": "0 0 20px rgba(79, 70, 229, 0.3)", "purpose": "Critical action focal points." }
+    ],
+    "motion": [
+      { "name": "hover-lift", "value": "transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease", "purpose": "Interactive elements inviting clicks or scans." },
+      { "name": "fade-in-up", "value": "0.5s cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Page load and modal entry animations." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Primary action button with hover lift.",
+      "html": "<button class=\"ds-btn-primary\">Execute Engine</button>",
+      "css": ".ds-btn-primary { background: #4F46E5; color: #FFFFFF; padding: 0.5rem 1rem; border: none; border-radius: 0.5rem; transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease; cursor: pointer; font-family: Outfit, sans-serif; font-weight: 600; font-size: 16px; box-shadow: 0 2px 4px 0 rgba(148, 163, 184, 0.1); } .ds-btn-primary:hover { background: #4338CA; transform: translateY(-2px); box-shadow: 0 4px 6px -1px rgba(148, 163, 184, 0.1); }"
+    },
+    {
+      "name": "Status Badge",
+      "kind": "chip",
+      "refersTo": "status-chip",
+      "description": "Unambiguous status indicator.",
+      "html": "<span class=\"ds-status-healthy\">Completed</span>",
+      "css": ".ds-status-healthy { display: inline-flex; align-items: center; padding: 0.25rem 0.75rem; border-radius: 9999px; font-family: Inter, sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; background: #D1FAE5; color: #065F46; border: 1px solid rgba(16, 185, 129, 0.2); }"
+    },
+    {
+      "name": "Elevated Card",
+      "kind": "card",
+      "refersTo": "elevated-card",
+      "description": "Floating data container.",
+      "html": "<div class=\"ds-elevated-card\"><h3 class=\"ds-card-title\">Active Repairs</h3><p class=\"ds-card-body\">Data grid goes here.</p></div>",
+      "css": ".ds-elevated-card { background: #FFFFFF; border-radius: 0.75rem; padding: 1.5rem; box-shadow: 0 2px 4px 0 rgba(148, 163, 184, 0.1), 0 1px 2px -1px rgba(148, 163, 184, 0.1); } .ds-card-title { margin: 0 0 1rem 0; font-family: Outfit, sans-serif; font-size: 20px; font-weight: 600; color: #0F172A; } .ds-card-body { margin: 0; font-family: Inter, sans-serif; font-size: 16px; color: #475569; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Summer Engine",
+    "overview": "Stark, functional, and deeply operational. Design gets out of the way to prioritize data density and speed. We use glassmorphism and subtle animations to make repetitive tasks feel effortless, maintaining a high-throughput, energetic workflow for the intensive summer device turnaround.",
+    "keyCharacteristics": [
+      "High-contrast, unambiguous statuses.",
+      "Glassmorphic layers over a bright slate background.",
+      "Tactile, bold interactions tailored for high-speed scanning and triage."
+    ],
+    "rules": [
+      { "name": "The Unambiguous Status Rule", "body": "Status colors (error, success, warning, etc.) must always be used with high-contrast text on a heavily tinted container (e.g., #065F46 text on #D1FAE5 background) to ensure instant recognition on a busy floor.", "section": "colors" }
+    ],
+    "dos": [
+      "Do use the hover-lift utility for any element that invites a click or scan.",
+      "Do use JetBrains Mono for any hardware identifiers (Asset Tags, Serial Numbers) to prevent character confusion.",
+      "Do rely on glassmorphic panels for navigation to maintain context without crowding the viewport."
+    ],
+    "donts": [
+      "Don't use standard HTML tables without the Soft Small shadow container; data must always feel lifted from the canvas.",
+      "Don't mix status colors. A red element (#EF4444) must exclusively mean error, unrepairable, or awaiting parts."
+    ]
+  }
+}

@@ -27,6 +27,7 @@ export default function DashboardPage() {
   const [activity, setActivity] = useState<IntakeLog[]>(demoActivity);
   const [loading, setLoading] = useState(true);
   const [mounted, setMounted] = useState(false);
+  const [scanInput, setScanInput] = useState('');
 
   useEffect(() => {
     setMounted(true);
@@ -47,6 +48,12 @@ export default function DashboardPage() {
     fetchData();
   }, []);
 
+  function handleScan(e: React.FormEvent) {
+    e.preventDefault();
+    if (!scanInput.trim()) return;
+    window.location.href = `/intake?asset=${encodeURIComponent(scanInput.trim())}`;
+  }
+
   function timeAgo(dateStr: string) {
     const diff = Date.now() - new Date(dateStr).getTime();
     const mins = Math.floor(diff / 60000);
@@ -58,7 +65,7 @@ export default function DashboardPage() {
   }
 
   const conditionIcons: Record<string, { icon: string; bgClass: string }> = {
-    healthy: { icon: 'check_circle', bgClass: 'bg-[#DCFCE7] text-[#166534]' },
+    healthy: { icon: 'check_circle', bgClass: 'bg-[#D1FAE5] text-[#065F46]' },
     needs_powerwash: { icon: 'mop', bgClass: 'bg-[#F3E8FF] text-[#6B21A8]' },
     major_damage: { icon: 'error', bgClass: 'bg-[#FEE2E2] text-[#991B1B]' },
     minor_damage: { icon: 'build_circle', bgClass: 'bg-[#FEF3C7] text-[#92400E]' },
@@ -66,30 +73,50 @@ export default function DashboardPage() {
 
   return (
     <div className="space-y-grid-gutter animate-fade-in-up">
-      {/* Page Header */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-2">
+      {/* Quick Scan & Header Bar */}
+      <div className="glass rounded-2xl p-4 shadow-soft-sm flex flex-col xl:flex-row justify-between items-start xl:items-center gap-4">
         <div>
-          <h2 className="text-display-lg font-display-lg text-transparent bg-clip-text bg-gradient-to-r from-on-surface to-on-surface-variant">Director&apos;s Command Center</h2>
-          <p className="text-body-md font-body-md text-on-surface-variant mt-1 tracking-wide">
-            Strategic overview of fleet health, procurement, and departmental operations.
+          <h2 className="text-display-lg font-display-lg text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary leading-tight">Command Center</h2>
+          <p className="text-body-sm font-body-sm text-outline mt-1 tracking-wide">
+            Summer Engine Operations • High-speed visual triage active
           </p>
         </div>
-        <div className="flex gap-3">
-          <button className="bg-white border border-outline-variant/30 text-on-surface hover:text-primary transition-all rounded-xl py-2.5 px-5 flex items-center gap-2 font-label-caps shadow-soft-sm hover:shadow-soft-md hover-lift">
-            <span className="material-symbols-outlined text-[20px]">play_arrow</span>
-            Run Engine
-          </button>
-          <a href="/intake" className="bg-gradient-to-r from-primary to-secondary text-white rounded-xl py-2.5 px-5 flex items-center gap-2 font-label-caps shadow-soft-md hover:shadow-glow hover-lift">
-            <span className="material-symbols-outlined text-[20px]">barcode_scanner</span>
-            Start Intake
-          </a>
+
+        <div className="flex flex-col sm:flex-row gap-3 w-full xl:w-auto">
+          <form onSubmit={handleScan} className="relative w-full sm:w-80 hover-lift shrink-0">
+            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+              <span className="material-symbols-outlined text-outline">barcode_scanner</span>
+            </div>
+            <input
+              type="text"
+              className="block w-full pl-12 pr-4 py-3 bg-white/80 border border-outline-variant/30 rounded-xl text-on-surface font-mono-data placeholder:font-body-md placeholder:text-outline focus:ring-2 focus:ring-primary focus:border-primary shadow-soft-sm transition-all outline-none"
+              placeholder="Scan Asset Tag..."
+              value={scanInput}
+              onChange={(e) => setScanInput(e.target.value)}
+              autoFocus
+            />
+            <button type="submit" className="absolute inset-y-1.5 right-1.5 bg-primary hover:bg-primary-hover text-white rounded-lg px-3 text-label-caps transition-colors shadow-soft-sm">
+              Triage
+            </button>
+          </form>
+
+          <div className="flex gap-2 w-full sm:w-auto">
+            <button className="flex-1 sm:flex-none glass text-on-surface hover:text-primary transition-all rounded-xl py-2.5 px-4 flex justify-center items-center gap-2 font-label-caps shadow-soft-sm hover:shadow-soft-md hover-lift border border-outline-variant/30">
+              <span className="material-symbols-outlined text-[20px]">play_arrow</span>
+              Run Engine
+            </button>
+            <a href="/intake" className="flex-1 sm:flex-none bg-gradient-to-r from-primary to-secondary text-white rounded-xl py-2.5 px-4 flex justify-center items-center gap-2 font-label-caps shadow-soft-md hover:shadow-glow hover-lift">
+              <span className="material-symbols-outlined text-[20px]">add_box</span>
+              Start Intake
+            </a>
+          </div>
         </div>
       </div>
 
       {/* Summary Stat Cards */}
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-stack-gap">
         {/* Total Inventory */}
-        <div className="bg-white border border-white/50 rounded-2xl p-6 flex flex-col justify-between shadow-soft-sm hover-lift relative overflow-hidden group">
+        <div className="glass rounded-2xl p-6 flex flex-col justify-between shadow-soft-sm hover-lift relative overflow-hidden group">
           <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -mr-16 -mt-16 transition-transform group-hover:scale-110"></div>
           <div className="flex justify-between items-start mb-6 relative z-10">
             <span className="text-label-caps text-outline font-bold tracking-widest">Total Inventory</span>
@@ -109,7 +136,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Devices Ready */}
-        <div className="bg-white border border-white/50 rounded-2xl p-6 flex flex-col justify-between shadow-soft-sm hover-lift relative overflow-hidden group">
+        <div className="glass rounded-2xl p-6 flex flex-col justify-between shadow-soft-sm hover-lift relative overflow-hidden group">
           <div className="absolute top-0 right-0 w-32 h-32 bg-success/5 rounded-bl-full -mr-16 -mt-16 transition-transform group-hover:scale-110"></div>
           <div className="flex justify-between items-start mb-6 relative z-10">
             <span className="text-label-caps text-outline font-bold tracking-widest">Devices Ready</span>
@@ -131,7 +158,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Pending Repairs */}
-        <div className="bg-white border border-white/50 rounded-2xl p-6 flex flex-col justify-between shadow-soft-sm hover-lift relative overflow-hidden group">
+        <div className="glass rounded-2xl p-6 flex flex-col justify-between shadow-soft-sm hover-lift relative overflow-hidden group">
           <div className="absolute top-0 right-0 w-32 h-32 bg-warning/5 rounded-bl-full -mr-16 -mt-16 transition-transform group-hover:scale-110"></div>
           <div className="flex justify-between items-start mb-6 relative z-10">
             <span className="text-label-caps text-outline font-bold tracking-widest">Pending Repairs</span>
@@ -153,7 +180,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Warranty Coverage */}
-        <div className="bg-white border border-white/50 rounded-2xl p-6 flex flex-col justify-between shadow-soft-sm hover-lift relative overflow-hidden group">
+        <div className="glass rounded-2xl p-6 flex flex-col justify-between shadow-soft-sm hover-lift relative overflow-hidden group">
           <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-bl-full -mr-16 -mt-16 transition-transform group-hover:scale-110"></div>
           <div className="flex justify-between items-start mb-6 relative z-10">
             <span className="text-label-caps text-outline font-bold tracking-widest">Warranty Cover</span>
@@ -164,7 +191,7 @@ export default function DashboardPage() {
           <div className="relative z-10">
             <span className="text-display-lg font-display-lg text-on-surface block">{stats.warrantyPercent}%</span>
             <div className="w-full bg-surface-variant mt-3 h-1.5 rounded-full overflow-hidden">
-              <div className="bg-gradient-to-r from-blue-400 to-blue-600 h-full rounded-full transition-all duration-1000" style={{ width: `${stats.warrantyPercent}%` }} />
+              <div className="bg-gradient-to-r from-primary to-secondary h-full rounded-full transition-all duration-1000" style={{ width: `${stats.warrantyPercent}%` }} />
             </div>
             <span className="mt-2 text-label-caps text-outline block">
               {100 - stats.warrantyPercent}% exposed risk
@@ -176,7 +203,7 @@ export default function DashboardPage() {
       {/* Main Split Section */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-grid-gutter">
         {/* Chart Area */}
-        <section className="lg:col-span-2 bg-white border border-outline-variant/30 rounded-3xl p-6 md:p-8 flex flex-col h-[420px] shadow-soft-sm">
+        <section className="lg:col-span-2 glass rounded-3xl p-6 md:p-8 flex flex-col h-[420px] shadow-soft-sm">
           <div className="flex justify-between items-center mb-8">
             <div>
               <h3 className="text-title-sm font-title-sm text-on-surface">Summer Turnaround</h3>
@@ -222,7 +249,7 @@ export default function DashboardPage() {
         </section>
 
         {/* Activity Feed */}
-        <section className="bg-white border border-outline-variant/30 rounded-3xl p-6 md:p-8 flex flex-col h-[420px] shadow-soft-sm">
+        <section className="glass rounded-3xl p-6 md:p-8 flex flex-col h-[420px] shadow-soft-sm">
           <div className="flex justify-between items-center mb-6">
             <h3 className="text-title-sm font-title-sm text-on-surface">Live Activity</h3>
             <button className="text-label-caps text-primary hover:text-secondary hover:bg-primary/5 px-3 py-1.5 rounded-full transition-colors">
@@ -234,7 +261,7 @@ export default function DashboardPage() {
               const ci = conditionIcons[log.condition] || conditionIcons.healthy;
               return (
                 <div key={log.id} className="flex items-start gap-4 animate-fade-in-up" style={{ animationDelay: `${index * 100}ms` }}>
-                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 shadow-sm ${ci.bgClass}`}>
+                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 shadow-soft-sm ${ci.bgClass}`}>
                     <span className="material-symbols-outlined text-[20px]">{ci.icon}</span>
                   </div>
                   <div className="flex-1 min-w-0">
@@ -246,7 +273,7 @@ export default function DashboardPage() {
                       </span>
                     </p>
                     <div className="flex items-center gap-2 mt-1.5">
-                      <span className={`inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold tracking-wide uppercase status-${log.new_status}`}>
+                      <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-label-caps status-${log.new_status}`}>
                         {log.new_status.replace(/_/g, ' ')}
                       </span>
                       <span className="text-[11px] font-medium text-outline">
@@ -270,8 +297,8 @@ export default function DashboardPage() {
       {/* Device Type Breakdown */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-grid-gutter">
         {Object.entries(stats.byType).map(([type, count]) => (
-          <div key={type} className="bg-white border border-outline-variant/30 rounded-2xl p-5 flex items-center gap-5 shadow-soft-sm hover-lift group">
-            <div className="w-14 h-14 rounded-2xl bg-secondary-container/50 text-secondary group-hover:bg-primary group-hover:text-white flex items-center justify-center shrink-0 transition-colors duration-300">
+          <div key={type} className="glass rounded-2xl p-5 flex items-center gap-5 shadow-soft-sm hover-lift group">
+            <div className="w-14 h-14 rounded-2xl bg-secondary-container/50 text-secondary group-hover:bg-gradient-to-br from-primary to-secondary group-hover:text-white flex items-center justify-center shrink-0 transition-colors duration-300 shadow-soft-sm group-hover:shadow-glow">
               <span className="material-symbols-outlined text-[28px]">
                 {type === 'chromebook' ? 'laptop_chromebook' : type === 'ipad' ? 'tablet_mac' : 'laptop_mac'}
               </span>

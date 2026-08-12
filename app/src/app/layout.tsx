@@ -38,7 +38,10 @@ export default function RootLayout({
       </head>
       <body className="antialiased text-on-surface bg-background selection:bg-primary-light selection:text-primary">
         <AppShell>{children}</AppShell>
-      </body>
+      {/* impeccable-live-start */}
+<script src="http://localhost:8400/live.js?token=c2df8bb3-aadf-446d-a1c6-238570296d2e"></script>
+{/* impeccable-live-end */}
+</body>
     </html>
   );
 }
