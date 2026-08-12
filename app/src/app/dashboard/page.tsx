@@ -69,19 +69,19 @@ export default function DashboardPage() {
       {/* Page Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mb-2">
         <div>
-          <h2 className="text-display-lg font-display-lg text-on-surface">Director&apos;s Command Center</h2>
-          <p className="text-body-md font-body-md text-on-surface-variant mt-1">
+          <h2 className="text-display-lg font-display-lg text-transparent bg-clip-text bg-gradient-to-r from-on-surface to-on-surface-variant">Director&apos;s Command Center</h2>
+          <p className="text-body-md font-body-md text-on-surface-variant mt-1 tracking-wide">
             Strategic overview of fleet health, procurement, and departmental operations.
           </p>
         </div>
-        <div className="flex gap-2">
-          <button className="bg-surface-container-lowest border border-outline-variant text-on-surface hover:bg-surface-container-low transition-colors rounded-lg py-2 px-4 flex items-center gap-2 font-body-sm text-body-sm shadow-sm">
-            <span className="material-symbols-outlined text-[18px]">play_arrow</span>
-            Run Assignment Engine
+        <div className="flex gap-3">
+          <button className="bg-white border border-outline-variant/30 text-on-surface hover:text-primary transition-all rounded-xl py-2.5 px-5 flex items-center gap-2 font-label-caps shadow-soft-sm hover:shadow-soft-md hover-lift">
+            <span className="material-symbols-outlined text-[20px]">play_arrow</span>
+            Run Engine
           </button>
-          <a href="/intake" className="bg-primary text-on-primary hover:bg-primary/90 transition-colors rounded-lg py-2 px-4 flex items-center gap-2 font-body-sm text-body-sm shadow-sm">
-            <span className="material-symbols-outlined text-[18px]">barcode_scanner</span>
-            Start New Intake
+          <a href="/intake" className="bg-gradient-to-r from-primary to-secondary text-white rounded-xl py-2.5 px-5 flex items-center gap-2 font-label-caps shadow-soft-md hover:shadow-glow hover-lift">
+            <span className="material-symbols-outlined text-[20px]">barcode_scanner</span>
+            Start Intake
           </a>
         </div>
       </div>
@@ -89,80 +89,84 @@ export default function DashboardPage() {
       {/* Summary Stat Cards */}
       <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-stack-gap">
         {/* Total Inventory */}
-        <div className="bg-surface-container-lowest border border-surface-variant rounded-xl p-5 flex flex-col justify-between hover:shadow-[0_4px_6px_-1px_rgb(0,0,0,0.1)] transition-shadow">
-          <div className="flex justify-between items-start mb-4">
-            <span className="text-label-caps font-label-caps text-on-surface-variant">Total Inventory</span>
-            <div className="w-8 h-8 rounded-full bg-secondary-container/50 flex items-center justify-center">
-              <span className="material-symbols-outlined text-[18px] text-on-secondary-container">devices</span>
+        <div className="bg-white border border-white/50 rounded-2xl p-6 flex flex-col justify-between shadow-soft-sm hover-lift relative overflow-hidden group">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -mr-16 -mt-16 transition-transform group-hover:scale-110"></div>
+          <div className="flex justify-between items-start mb-6 relative z-10">
+            <span className="text-label-caps text-outline font-bold tracking-widest">Total Inventory</span>
+            <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+              <span className="material-symbols-outlined text-[20px] text-primary">devices</span>
             </div>
           </div>
-          <div>
-            <span className="text-display-lg font-display-lg text-primary block">
+          <div className="relative z-10">
+            <span className="text-display-lg font-display-lg text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary block">
               {loading ? '—' : stats.total.toLocaleString()}
             </span>
-            <span className="text-body-sm font-body-sm text-outline flex items-center gap-1 mt-1">
-              <span className="material-symbols-outlined text-[14px] text-primary">trending_up</span>
-              {stats.newDevices} new this cycle
+            <span className="text-label-caps text-success flex items-center gap-1 mt-2">
+              <span className="material-symbols-outlined text-[16px]">trending_up</span>
+              +{stats.newDevices} new this cycle
             </span>
           </div>
         </div>
 
         {/* Devices Ready */}
-        <div className="bg-surface-container-lowest border border-surface-variant rounded-xl p-5 flex flex-col justify-between hover:shadow-[0_4px_6px_-1px_rgb(0,0,0,0.1)] transition-shadow">
-          <div className="flex justify-between items-start mb-4">
-            <span className="text-label-caps font-label-caps text-on-surface-variant">Devices Ready</span>
-            <div className="w-8 h-8 rounded-full bg-[#DCFCE7]/50 flex items-center justify-center">
-              <span className="material-symbols-outlined text-[18px] text-[#166534]">check_circle</span>
+        <div className="bg-white border border-white/50 rounded-2xl p-6 flex flex-col justify-between shadow-soft-sm hover-lift relative overflow-hidden group">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-success/5 rounded-bl-full -mr-16 -mt-16 transition-transform group-hover:scale-110"></div>
+          <div className="flex justify-between items-start mb-6 relative z-10">
+            <span className="text-label-caps text-outline font-bold tracking-widest">Devices Ready</span>
+            <div className="w-10 h-10 rounded-xl bg-success/10 flex items-center justify-center">
+              <span className="material-symbols-outlined text-[20px] text-success">check_circle</span>
             </div>
           </div>
-          <div>
-            <span className="text-display-lg font-display-lg text-primary block">
+          <div className="relative z-10">
+            <span className="text-display-lg font-display-lg text-on-surface block">
               {loading ? '—' : stats.healthy.toLocaleString()}
             </span>
-            <div className="w-full bg-surface-variant rounded-full h-1.5 mt-2 overflow-hidden">
-              <div className="bg-primary h-1.5 rounded-full transition-all duration-1000" style={{ width: `${stats.total > 0 ? Math.round((stats.healthy / stats.total) * 100) : 0}%` }} />
+            <div className="w-full bg-surface-variant rounded-full h-1.5 mt-3 overflow-hidden">
+              <div className="bg-gradient-to-r from-success to-emerald-400 h-1.5 rounded-full transition-all duration-1000" style={{ width: `${stats.total > 0 ? Math.round((stats.healthy / stats.total) * 100) : 0}%` }} />
             </div>
-            <span className="text-body-sm font-body-sm text-outline mt-1 block">
+            <span className="text-label-caps text-outline mt-2 block">
               {stats.total > 0 ? Math.round((stats.healthy / stats.total) * 100) : 0}% of total fleet
             </span>
           </div>
         </div>
 
         {/* Pending Repairs */}
-        <div className="bg-surface-container-lowest border border-surface-variant rounded-xl p-5 flex flex-col justify-between hover:shadow-[0_4px_6px_-1px_rgb(0,0,0,0.1)] transition-shadow">
-          <div className="flex justify-between items-start mb-4">
-            <span className="text-label-caps font-label-caps text-on-surface-variant">Pending Repairs</span>
-            <div className="w-8 h-8 rounded-full bg-error-container/50 flex items-center justify-center">
-              <span className="material-symbols-outlined text-[18px] text-on-error-container">build</span>
+        <div className="bg-white border border-white/50 rounded-2xl p-6 flex flex-col justify-between shadow-soft-sm hover-lift relative overflow-hidden group">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-warning/5 rounded-bl-full -mr-16 -mt-16 transition-transform group-hover:scale-110"></div>
+          <div className="flex justify-between items-start mb-6 relative z-10">
+            <span className="text-label-caps text-outline font-bold tracking-widest">Pending Repairs</span>
+            <div className="w-10 h-10 rounded-xl bg-warning/10 flex items-center justify-center">
+              <span className="material-symbols-outlined text-[20px] text-warning">build</span>
             </div>
           </div>
-          <div>
-            <span className="text-display-lg font-display-lg text-primary block">
+          <div className="relative z-10">
+            <span className="text-display-lg font-display-lg text-on-surface block">
               {loading ? '—' : stats.inRepair}
             </span>
             {stats.inRepair > 3 && (
-              <span className="text-body-sm font-body-sm text-on-error-container flex items-center gap-1 mt-1 bg-error-container/20 px-2 py-0.5 rounded w-max">
-                <span className="material-symbols-outlined text-[14px]">warning</span>
-                High volume alert
+              <span className="text-label-caps text-error flex items-center gap-1 mt-2 bg-error/10 px-2 py-1 rounded-md w-max">
+                <span className="material-symbols-outlined text-[16px]">warning</span>
+                High volume
               </span>
             )}
           </div>
         </div>
 
         {/* Warranty Coverage */}
-        <div className="bg-surface-container-lowest border border-surface-variant rounded-xl p-5 flex flex-col justify-between hover:shadow-[0_4px_6px_-1px_rgb(0,0,0,0.1)] transition-shadow">
-          <div className="flex justify-between items-start mb-4">
-            <span className="text-label-caps font-label-caps text-on-surface-variant">Warranty Coverage</span>
-            <div className="w-8 h-8 rounded-full bg-[#E0F2FE] flex items-center justify-center">
-              <span className="material-symbols-outlined text-[18px] text-[#0369A1]">verified_user</span>
+        <div className="bg-white border border-white/50 rounded-2xl p-6 flex flex-col justify-between shadow-soft-sm hover-lift relative overflow-hidden group">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-bl-full -mr-16 -mt-16 transition-transform group-hover:scale-110"></div>
+          <div className="flex justify-between items-start mb-6 relative z-10">
+            <span className="text-label-caps text-outline font-bold tracking-widest">Warranty Cover</span>
+            <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center">
+              <span className="material-symbols-outlined text-[20px] text-blue-600">verified_user</span>
             </div>
           </div>
-          <div>
-            <span className="text-display-lg font-display-lg text-primary block">{stats.warrantyPercent}%</span>
-            <div className="w-full bg-surface-container mt-2 h-2 rounded-full overflow-hidden">
-              <div className="bg-primary h-full rounded-full transition-all duration-1000" style={{ width: `${stats.warrantyPercent}%` }} />
+          <div className="relative z-10">
+            <span className="text-display-lg font-display-lg text-on-surface block">{stats.warrantyPercent}%</span>
+            <div className="w-full bg-surface-variant mt-3 h-1.5 rounded-full overflow-hidden">
+              <div className="bg-gradient-to-r from-blue-400 to-blue-600 h-full rounded-full transition-all duration-1000" style={{ width: `${stats.warrantyPercent}%` }} />
             </div>
-            <span className="mt-2 text-body-sm font-body-sm text-on-surface-variant block">
+            <span className="mt-2 text-label-caps text-outline block">
               {100 - stats.warrantyPercent}% exposed risk
             </span>
           </div>
@@ -172,86 +176,91 @@ export default function DashboardPage() {
       {/* Main Split Section */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-grid-gutter">
         {/* Chart Area */}
-        <section className="lg:col-span-2 bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex flex-col h-[400px]">
-          <div className="flex justify-between items-center mb-6">
-            <h3 className="text-title-sm font-title-sm text-primary">Summer Turnaround Progress</h3>
-            <div className="flex items-center gap-2">
-              <span className="text-label-caps font-label-caps text-on-surface-variant">Daily Processing Volume</span>
-              <span className="material-symbols-outlined text-[16px] text-outline">info</span>
+        <section className="lg:col-span-2 bg-white border border-outline-variant/30 rounded-3xl p-6 md:p-8 flex flex-col h-[420px] shadow-soft-sm">
+          <div className="flex justify-between items-center mb-8">
+            <div>
+              <h3 className="text-title-sm font-title-sm text-on-surface">Summer Turnaround</h3>
+              <p className="text-label-caps text-outline mt-1">DAILY PROCESSING VOLUME</p>
+            </div>
+            <div className="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center cursor-help hover:bg-outline-variant transition-colors">
+              <span className="material-symbols-outlined text-[20px] text-on-surface-variant">analytics</span>
             </div>
           </div>
           {/* Bar chart */}
-          <div className="flex-1 w-full relative bg-surface-bright border-b border-l border-surface-variant flex items-end px-2">
+          <div className="flex-1 w-full relative flex items-end">
             {/* Y-axis gridlines */}
             <div className="absolute inset-0 flex flex-col justify-between pointer-events-none pb-8">
               {[0, 1, 2, 3].map(i => (
-                <div key={i} className="w-full border-t border-dashed border-surface-variant h-0" />
+                <div key={i} className="w-full border-t border-dashed border-outline-variant/50 h-0" />
               ))}
             </div>
             {/* Bars */}
-            <div className="w-full h-[calc(100%-2rem)] flex items-end justify-between px-4 z-10 gap-2">
+            <div className="w-full h-[calc(100%-2rem)] flex items-end justify-between px-2 sm:px-6 z-10 gap-3">
               {barData.map((bar, i) => (
                 <div
                   key={bar.day}
-                  className={`w-full rounded-t-sm transition-all duration-300 hover:opacity-80 relative group ${
-                    i === 3 ? 'bg-secondary' : 'bg-surface-variant'
+                  className={`w-full rounded-t-lg transition-all duration-500 hover:opacity-80 relative group ${
+                    i === 3 ? 'bg-gradient-to-t from-primary to-secondary shadow-glow' : 'bg-surface-variant hover:bg-outline-variant'
                   }`}
                   style={{
                     height: `${bar.value}%`,
                     animationDelay: `${i * 100}ms`,
                   }}
                 >
-                  <div className="opacity-0 group-hover:opacity-100 absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-surface text-label-caps font-label-caps px-2 py-1 rounded whitespace-nowrap transition-opacity pointer-events-none">
-                    {bar.value * 10} Processed
+                  <div className="opacity-0 group-hover:opacity-100 absolute -top-10 left-1/2 -translate-x-1/2 bg-on-surface text-white text-label-caps px-3 py-1.5 rounded-lg whitespace-nowrap transition-all pointer-events-none shadow-xl">
+                    {bar.value * 10} units
+                    <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 border-4 border-transparent border-t-on-surface"></div>
                   </div>
                 </div>
               ))}
             </div>
             {/* X-axis labels */}
-            <div className="absolute bottom-0 left-0 w-full flex justify-between px-6 py-2 text-label-caps font-label-caps text-outline">
-              {barData.map(bar => <span key={bar.day}>{bar.day}</span>)}
+            <div className="absolute bottom-0 left-0 w-full flex justify-between px-2 sm:px-6 py-2 text-label-caps text-outline font-bold">
+              {barData.map(bar => <span key={bar.day} className="w-full text-center">{bar.day}</span>)}
             </div>
           </div>
         </section>
 
         {/* Activity Feed */}
-        <section className="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex flex-col h-[400px]">
+        <section className="bg-white border border-outline-variant/30 rounded-3xl p-6 md:p-8 flex flex-col h-[420px] shadow-soft-sm">
           <div className="flex justify-between items-center mb-6">
-            <h3 className="text-title-sm font-title-sm text-primary">Recent Activity</h3>
-            <button className="text-label-caps font-label-caps text-secondary hover:text-primary transition-colors">
+            <h3 className="text-title-sm font-title-sm text-on-surface">Live Activity</h3>
+            <button className="text-label-caps text-primary hover:text-secondary hover:bg-primary/5 px-3 py-1.5 rounded-full transition-colors">
               View All
             </button>
           </div>
-          <div className="flex-1 overflow-y-auto pr-2 flex flex-col gap-4">
-            {activity.map((log) => {
+          <div className="flex-1 overflow-y-auto pr-2 flex flex-col gap-5">
+            {activity.map((log, index) => {
               const ci = conditionIcons[log.condition] || conditionIcons.healthy;
               return (
-                <div key={log.id} className="flex items-start gap-3">
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${ci.bgClass}`}>
-                    <span className="material-symbols-outlined text-[16px]">{ci.icon}</span>
+                <div key={log.id} className="flex items-start gap-4 animate-fade-in-up" style={{ animationDelay: `${index * 100}ms` }}>
+                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 shadow-sm ${ci.bgClass}`}>
+                    <span className="material-symbols-outlined text-[20px]">{ci.icon}</span>
                   </div>
-                  <div>
-                    <p className="text-body-sm font-body-sm text-on-surface">
-                      <span className="font-semibold">{log.triaged_by_name || 'System'}</span>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-body-sm font-body-sm text-on-surface truncate">
+                      <span className="font-semibold text-primary">{log.triaged_by_name || 'System'}</span>
                       {' '}triaged{' '}
-                      <span className="font-mono-data text-mono-data bg-surface-variant px-1 rounded">
+                      <span className="font-mono-data text-outline font-bold">
                         {log.asset_tag}
                       </span>
-                      {' → '}
-                      <span className={`inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-semibold status-${log.new_status}`}>
+                    </p>
+                    <div className="flex items-center gap-2 mt-1.5">
+                      <span className={`inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold tracking-wide uppercase status-${log.new_status}`}>
                         {log.new_status.replace(/_/g, ' ')}
                       </span>
-                    </p>
-                    <span className="text-label-caps font-label-caps text-outline mt-1 block">
-                      {mounted ? timeAgo(log.created_at) : '...'}
-                    </span>
+                      <span className="text-[11px] font-medium text-outline">
+                        • {mounted ? timeAgo(log.created_at) : '...'}
+                      </span>
+                    </div>
                   </div>
                 </div>
               );
             })}
             {activity.length === 0 && (
-              <div className="flex-1 flex items-center justify-center text-on-surface-variant text-body-sm">
-                No recent activity
+              <div className="flex-1 flex flex-col items-center justify-center text-outline gap-2">
+                <span className="material-symbols-outlined text-[32px] opacity-50">inbox</span>
+                <span className="text-label-caps">No recent activity</span>
               </div>
             )}
           </div>
@@ -261,17 +270,17 @@ export default function DashboardPage() {
       {/* Device Type Breakdown */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-grid-gutter">
         {Object.entries(stats.byType).map(([type, count]) => (
-          <div key={type} className="bg-surface-container-lowest border border-surface-variant rounded-xl p-5 flex items-center gap-4 hover:shadow-sm transition-shadow">
-            <div className="w-12 h-12 rounded-xl bg-secondary-container/30 flex items-center justify-center shrink-0">
-              <span className="material-symbols-outlined text-on-secondary-container">
-                {type === 'chromebook' ? 'laptop_chromebook' : type === 'ipad' ? 'tablet' : 'laptop_mac'}
+          <div key={type} className="bg-white border border-outline-variant/30 rounded-2xl p-5 flex items-center gap-5 shadow-soft-sm hover-lift group">
+            <div className="w-14 h-14 rounded-2xl bg-secondary-container/50 text-secondary group-hover:bg-primary group-hover:text-white flex items-center justify-center shrink-0 transition-colors duration-300">
+              <span className="material-symbols-outlined text-[28px]">
+                {type === 'chromebook' ? 'laptop_chromebook' : type === 'ipad' ? 'tablet_mac' : 'laptop_mac'}
               </span>
             </div>
             <div className="flex-1">
-              <p className="text-label-caps font-label-caps text-on-surface-variant capitalize">{type}s</p>
-              <p className="text-headline-md font-headline-md text-on-surface">{count}</p>
+              <p className="text-label-caps text-outline capitalize font-bold tracking-wider">{type}s</p>
+              <p className="text-headline-md font-headline-md text-on-surface mt-1">{count}</p>
             </div>
-            <div className="text-body-sm font-body-sm text-on-surface-variant">
+            <div className="text-title-sm font-bold text-outline-variant">
               {stats.total > 0 ? Math.round((count / stats.total) * 100) : 0}%
             </div>
           </div>

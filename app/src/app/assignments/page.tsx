@@ -120,15 +120,15 @@ export default function AssignmentsPage() {
   return (
     <div className="space-y-grid-gutter animate-fade-in-up">
       {/* Header */}
-      <header className="mb-stack-gap pb-4 border-b border-outline-variant flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
+      <header className="mb-stack-gap pb-4 border-b border-outline-variant/30 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
         <div>
-          <h2 className="text-display-lg font-display-lg text-on-surface">Automated Assignment Engine</h2>
-          <p className="text-body-md font-body-md text-on-surface-variant mt-1">
+          <h2 className="text-display-lg font-display-lg text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Automated Assignment Engine</h2>
+          <p className="text-body-md font-body-md text-on-surface-variant mt-1 tracking-wide">
             Configure allocation rules and batch assign devices to student rosters.
           </p>
         </div>
-        <button className="bg-surface text-on-background border border-outline-variant px-4 py-2 rounded-lg font-label-caps text-label-caps hover:shadow-md transition-shadow flex items-center gap-2">
-          <span className="material-symbols-outlined">qr_code_scanner</span>
+        <button className="bg-white text-on-surface border border-outline-variant/30 hover:text-primary px-5 py-2.5 rounded-xl font-label-caps text-label-caps shadow-soft-sm hover:shadow-soft-md hover-lift transition-all flex items-center gap-2 font-bold">
+          <span className="material-symbols-outlined text-[20px]">qr_code_scanner</span>
           Asset Tag Generator
         </button>
       </header>
@@ -137,8 +137,8 @@ export default function AssignmentsPage() {
         {/* Left Column: Configuration & Engine */}
         <div className="xl:col-span-4 flex flex-col gap-stack-gap">
           {/* Allocation Rules */}
-          <section className="bg-surface border border-outline-variant rounded-xl p-6 shadow-sm">
-            <div className="flex items-center justify-between mb-4">
+          <section className="bg-white border border-outline-variant/30 rounded-3xl p-6 md:p-8 shadow-soft-sm hover-lift">
+            <div className="flex items-center justify-between mb-6">
               <h3 className="text-title-sm font-title-sm text-on-surface flex items-center gap-2">
                 <span className="material-symbols-outlined text-secondary">rule_folder</span>
                 Allocation Rules
@@ -149,12 +149,12 @@ export default function AssignmentsPage() {
             </div>
             <div className="space-y-4">
               {rules.rules.map((rule) => (
-                <div key={rule.id} className="p-4 border border-outline-variant rounded-lg bg-surface-container-lowest">
-                  <label className="block text-label-caps font-label-caps text-on-surface-variant mb-1 uppercase">
+                <div key={rule.id} className="p-5 border border-outline-variant/50 rounded-2xl bg-surface transition-colors hover:bg-surface-variant/30">
+                  <label className="block text-label-caps font-bold text-outline mb-1 tracking-wider uppercase">
                     Rule {rule.id}: {rule.name}
                   </label>
-                  <p className="text-body-sm font-body-sm text-on-surface">{rule.description}</p>
-                  <p className="text-body-sm font-body-sm text-on-surface-variant mt-1">
+                  <p className="text-body-sm font-body-sm text-on-surface leading-snug">{rule.description}</p>
+                  <p className="text-[11px] text-on-surface-variant mt-2 font-bold bg-white/50 inline-block px-2 py-1 rounded">
                     Grades: {rule.grade_filter.join(', ')} • Pool: {rule.device_pool.replace(/_/g, ' ')}
                   </p>
                 </div>
@@ -162,46 +162,47 @@ export default function AssignmentsPage() {
             </div>
 
             {/* Pool availability */}
-            <div className="mt-4 p-3 bg-surface-container-low rounded-lg">
-              <p className="text-label-caps font-label-caps text-on-surface-variant mb-2">Device Pool Availability</p>
-              <div className="space-y-2 text-body-sm font-body-sm">
-                <div className="flex justify-between">
-                  <span>New Devices</span>
-                  <span className="font-mono-data text-mono-data font-bold">{rules.pools.new_devices}</span>
+            <div className="mt-6 p-5 bg-surface border border-outline-variant/50 rounded-2xl relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-bl-full pointer-events-none"></div>
+              <p className="text-label-caps font-bold text-outline mb-3 tracking-wider">DEVICE POOL AVAILABILITY</p>
+              <div className="space-y-2.5 text-body-sm font-body-sm">
+                <div className="flex justify-between items-center">
+                  <span className="font-medium">New Devices</span>
+                  <span className="font-mono-data text-mono-data font-bold bg-white px-2 py-0.5 rounded shadow-sm">{rules.pools.new_devices}</span>
                 </div>
-                <div className="flex justify-between">
-                  <span>Lenovo Stock</span>
-                  <span className="font-mono-data text-mono-data font-bold">{rules.pools.lenovo_stock}</span>
+                <div className="flex justify-between items-center">
+                  <span className="font-medium">Lenovo Stock</span>
+                  <span className="font-mono-data text-mono-data font-bold bg-white px-2 py-0.5 rounded shadow-sm">{rules.pools.lenovo_stock}</span>
                 </div>
-                <div className="flex justify-between">
-                  <span>Recycled Healthy</span>
-                  <span className="font-mono-data text-mono-data font-bold">{rules.pools.recycled_healthy}</span>
+                <div className="flex justify-between items-center">
+                  <span className="font-medium">Recycled Healthy</span>
+                  <span className="font-mono-data text-mono-data font-bold bg-white px-2 py-0.5 rounded shadow-sm">{rules.pools.recycled_healthy}</span>
                 </div>
-                <div className="flex justify-between border-t border-outline-variant pt-2 font-semibold">
-                  <span>Total Students</span>
-                  <span>{rules.total_students}</span>
+                <div className="flex justify-between items-center border-t border-outline-variant/50 pt-3 mt-1 font-bold">
+                  <span className="text-primary">Total Students</span>
+                  <span className="text-primary text-title-sm">{rules.total_students}</span>
                 </div>
               </div>
             </div>
           </section>
 
           {/* Engine Control */}
-          <section className="bg-surface border border-primary rounded-xl p-6 shadow-md relative overflow-hidden">
-            <div className="absolute top-0 right-0 p-4 opacity-10">
-              <span className="material-symbols-outlined text-[100px]">memory</span>
+          <section className="bg-white border border-outline-variant/30 rounded-3xl p-6 md:p-8 shadow-soft-sm relative overflow-hidden group hover-lift transition-all">
+            <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:scale-110 transition-transform duration-700">
+              <span className="material-symbols-outlined text-[120px] text-primary">memory</span>
             </div>
             <h3 className="text-title-sm font-title-sm text-on-surface mb-2 relative z-10">Engine Status</h3>
             <p className="text-body-sm font-body-sm text-on-surface-variant mb-6 relative z-10">
               Ready to process {rules.total_students} student records against current inventory.
             </p>
-            <div className="mb-6">
-              <div className="flex justify-between text-label-caps font-label-caps text-on-surface-variant mb-1">
-                <span>{engineRunning ? 'Processing Allocation...' : engineComplete ? 'Complete' : 'Idle'}</span>
+            <div className="mb-8">
+              <div className="flex justify-between text-label-caps font-bold text-outline tracking-wider mb-2">
+                <span>{engineRunning ? 'PROCESSING ALLOCATION...' : engineComplete ? 'COMPLETE' : 'IDLE'}</span>
                 <span>{engineComplete ? '100%' : `${progress}%`}</span>
               </div>
-              <div className="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+              <div className="h-3 w-full bg-surface-variant rounded-full overflow-hidden shadow-inner">
                 <div
-                  className="h-full bg-primary rounded-full transition-all duration-300"
+                  className="h-full bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-300 shadow-[inset_0_-2px_4px_rgba(0,0,0,0.1)]"
                   style={{ width: `${engineComplete ? 100 : progress}%` }}
                 />
               </div>
@@ -211,44 +212,44 @@ export default function AssignmentsPage() {
               <button
                 onClick={runEngine}
                 disabled={engineRunning}
-                className="w-full bg-primary text-on-primary py-3 rounded-lg font-headline-md text-title-sm hover:opacity-90 transition-opacity shadow-sm flex justify-center items-center gap-2 relative z-10 disabled:opacity-50"
+                className="w-full bg-gradient-to-r from-primary to-secondary text-white py-4 rounded-xl font-bold text-title-sm hover:shadow-glow hover:-translate-y-0.5 active:scale-95 transition-all flex justify-center items-center gap-2 relative z-10 disabled:opacity-50 disabled:hover:translate-y-0 disabled:hover:shadow-none"
               >
                 {engineRunning ? (
                   <>
-                    <span className="material-symbols-outlined animate-spin">sync</span>
-                    Running...
+                    <span className="material-symbols-outlined animate-spin text-[24px]">sync</span>
+                    Running Engine...
                   </>
                 ) : (
                   <>
-                    <span className="material-symbols-outlined">play_circle</span>
-                    Run Engine
+                    <span className="material-symbols-outlined text-[24px]">play_circle</span>
+                    Execute Engine
                   </>
                 )}
               </button>
             ) : (
               <button
                 disabled
-                className="w-full bg-secondary-container text-on-secondary-container py-3 rounded-lg font-headline-md text-title-sm flex justify-center items-center gap-2 relative z-10"
+                className="w-full bg-success/10 text-success py-4 rounded-xl font-bold text-title-sm flex justify-center items-center gap-2 relative z-10 border border-success/30"
               >
-                <span className="material-symbols-outlined">check_circle</span>
-                Complete
+                <span className="material-symbols-outlined text-[24px]">check_circle</span>
+                Execution Complete
               </button>
             )}
 
             {/* Summary stats after run */}
             {preview && (
-              <div className="mt-4 grid grid-cols-3 gap-2 relative z-10">
-                <div className="text-center p-2 bg-surface-container-lowest rounded-lg">
+              <div className="mt-6 grid grid-cols-3 gap-3 relative z-10 animate-fade-in-up">
+                <div className="text-center p-3 bg-white border border-outline-variant/30 shadow-soft-sm rounded-xl hover:-translate-y-1 transition-transform">
                   <p className="text-headline-md font-headline-md text-primary">{preview.stats.rule1}</p>
-                  <p className="text-label-caps font-label-caps text-on-surface-variant">New</p>
+                  <p className="text-label-caps font-bold text-outline tracking-wider mt-1">NEW</p>
                 </div>
-                <div className="text-center p-2 bg-surface-container-lowest rounded-lg">
+                <div className="text-center p-3 bg-white border border-outline-variant/30 shadow-soft-sm rounded-xl hover:-translate-y-1 transition-transform">
                   <p className="text-headline-md font-headline-md text-secondary">{preview.stats.rule2}</p>
-                  <p className="text-label-caps font-label-caps text-on-surface-variant">Returning</p>
+                  <p className="text-label-caps font-bold text-outline tracking-wider mt-1">RETURNING</p>
                 </div>
-                <div className="text-center p-2 bg-surface-container-lowest rounded-lg">
+                <div className="text-center p-3 bg-white border border-outline-variant/30 shadow-soft-sm rounded-xl hover:-translate-y-1 transition-transform">
                   <p className="text-headline-md font-headline-md text-error">{preview.stats.rule3}</p>
-                  <p className="text-label-caps font-label-caps text-on-surface-variant">Replaced</p>
+                  <p className="text-label-caps font-bold text-outline tracking-wider mt-1">REPLACED</p>
                 </div>
               </div>
             )}
@@ -257,24 +258,25 @@ export default function AssignmentsPage() {
 
         {/* Right Column: Proposed Assignments Table */}
         <div className="xl:col-span-8">
-          <section className="bg-surface border border-outline-variant rounded-xl shadow-sm h-full flex flex-col">
-            <div className="p-6 border-b border-outline-variant flex justify-between items-center bg-surface-container-lowest rounded-t-xl">
+          <section className="bg-white border border-outline-variant/30 rounded-3xl shadow-soft-sm h-full flex flex-col hover-lift transition-all">
+            <div className="p-6 md:p-8 border-b border-outline-variant/30 flex justify-between items-center bg-white rounded-t-3xl">
               <div>
                 <h3 className="text-title-sm font-title-sm text-on-surface">Proposed Assignments Preview</h3>
-                <p className="text-body-sm font-body-sm text-on-surface-variant">
+                <p className="text-body-sm font-body-sm text-on-surface-variant mt-1">
                   {proposed.length > 0 ? `${proposed.length} assignments generated. Review before committing.` : 'Run the engine to generate assignments.'}
                 </p>
               </div>
-              <div className="flex gap-2 items-center">
-                <span className="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-caps font-label-caps border border-secondary/20">
-                  {commitSuccess ? 'Committed' : 'Draft Mode'}
+              <div className="flex gap-3 items-center">
+                <span className="bg-secondary/10 text-secondary px-4 py-1.5 rounded-full text-label-caps font-bold border border-secondary/20 tracking-wider">
+                  {commitSuccess ? 'COMMITTED' : 'DRAFT MODE'}
                 </span>
                 {proposed.length > 0 && !commitSuccess && (
                   <button
                     onClick={handleCommit}
                     disabled={committing}
-                    className="bg-[#3B82F6] text-white px-4 py-1.5 rounded-lg text-body-sm font-body-sm font-bold hover:opacity-90 disabled:opacity-50 flex items-center gap-1"
+                    className="bg-gradient-to-r from-primary to-secondary text-white px-5 py-2 rounded-xl text-body-sm font-bold shadow-soft-sm hover:shadow-glow hover:-translate-y-0.5 active:scale-95 transition-all disabled:opacity-50 disabled:hover:translate-y-0 disabled:hover:shadow-none flex items-center gap-2"
                   >
+                    {committing ? <span className="material-symbols-outlined animate-spin text-[18px]">sync</span> : <span className="material-symbols-outlined text-[18px]">check_circle</span>}
                     {committing ? 'Committing...' : 'Commit All'}
                   </button>
                 )}
@@ -296,38 +298,40 @@ export default function AssignmentsPage() {
               </div>
             )}
 
-            <div className="overflow-x-auto flex-1">
+            <div className="overflow-x-auto flex-1 bg-white">
               <table className="w-full text-left border-collapse">
                 <thead>
-                  <tr className="bg-background border-b border-outline-variant">
-                    <th className="p-table-cell-padding text-label-caps font-label-caps text-secondary font-semibold uppercase tracking-wider">Student ID</th>
-                    <th className="p-table-cell-padding text-label-caps font-label-caps text-secondary font-semibold uppercase tracking-wider">Name</th>
-                    <th className="p-table-cell-padding text-label-caps font-label-caps text-secondary font-semibold uppercase tracking-wider">Grade</th>
-                    <th className="p-table-cell-padding text-label-caps font-label-caps text-secondary font-semibold uppercase tracking-wider">Proposed Asset</th>
-                    <th className="p-table-cell-padding text-label-caps font-label-caps text-secondary font-semibold uppercase tracking-wider">Rule</th>
+                  <tr className="bg-white border-b border-outline-variant/30">
+                    <th className="p-4 text-label-caps font-bold text-outline tracking-wider">Student ID</th>
+                    <th className="p-4 text-label-caps font-bold text-outline tracking-wider">Name</th>
+                    <th className="p-4 text-label-caps font-bold text-outline tracking-wider">Grade</th>
+                    <th className="p-4 text-label-caps font-bold text-outline tracking-wider">Proposed Asset</th>
+                    <th className="p-4 text-label-caps font-bold text-outline tracking-wider">Rule</th>
                   </tr>
                 </thead>
                 <tbody className="text-body-sm font-body-sm text-on-surface">
                   {paginatedProposed.map((a) => (
-                    <tr key={`${a.student_id}-${a.device_id}`} className="border-b border-surface-container-highest hover:bg-background transition-colors">
-                      <td className="p-table-cell-padding font-mono-data text-mono-data text-on-surface-variant">#{a.student_display_id}</td>
-                      <td className="p-table-cell-padding font-medium">{a.student_name}</td>
-                      <td className="p-table-cell-padding">{String(a.grade).padStart(2, '0')}</td>
-                      <td className="p-table-cell-padding">
-                        <div className="flex items-center gap-2">
-                          <span className={`material-symbols-outlined text-[16px] ${a.rule === 1 ? 'text-primary' : 'text-secondary'}`}>
+                    <tr key={`${a.student_id}-${a.device_id}`} className="border-b border-outline-variant/10 hover:bg-surface-variant/30 transition-colors">
+                      <td className="p-4 font-mono-data text-mono-data font-bold">#{a.student_display_id}</td>
+                      <td className="p-4 font-medium">{a.student_name}</td>
+                      <td className="p-4">{String(a.grade).padStart(2, '0')}</td>
+                      <td className="p-4">
+                        <div className="flex items-center gap-3">
+                          <span className={`material-symbols-outlined text-[18px] ${a.rule === 1 ? 'text-primary' : 'text-secondary'}`}>
                             {a.rule === 1 ? 'laptop_mac' : 'computer'}
                           </span>
-                          <span className="font-mono-data text-mono-data">{a.asset_tag}</span>
+                          <div>
+                            <span className="font-mono-data text-mono-data font-bold bg-white px-2 py-0.5 rounded shadow-sm border border-outline-variant/20">{a.asset_tag}</span>
+                            <p className="text-[11px] text-outline mt-1">{a.model}</p>
+                          </div>
                         </div>
-                        <span className="text-[10px] text-on-surface-variant">{a.model}</span>
                       </td>
-                      <td className="p-table-cell-padding">
-                        <span className={`px-2 py-1 rounded-full text-[10px] font-label-caps font-bold ${ruleBadgeColors[a.rule] || 'bg-surface-variant text-on-surface-variant'}`}>
+                      <td className="p-4">
+                        <span className={`px-2 py-1 rounded-md text-[11px] font-bold tracking-wide uppercase ${ruleBadgeColors[a.rule] || 'bg-surface-variant text-outline'}`}>
                           Rule {a.rule}
                         </span>
                         {a.reason && (
-                          <p className="text-[10px] text-on-surface-variant mt-1 max-w-[200px] truncate" title={a.reason}>
+                          <p className="text-[11px] text-outline mt-1 max-w-[200px] truncate" title={a.reason}>
                             {a.reason}
                           </p>
                         )}
@@ -336,8 +340,8 @@ export default function AssignmentsPage() {
                   ))}
                   {proposed.length === 0 && (
                     <tr>
-                      <td colSpan={5} className="p-12 text-center text-on-surface-variant">
-                        <span className="material-symbols-outlined text-[48px] text-outline-variant block mb-2">assignment_ind</span>
+                      <td colSpan={5} className="p-16 text-center text-outline">
+                        <span className="material-symbols-outlined text-[48px] text-outline/50 block mb-4">assignment_ind</span>
                         Run the engine to generate proposed assignments.
                       </td>
                     </tr>
@@ -348,24 +352,24 @@ export default function AssignmentsPage() {
 
             {/* Pagination */}
             {proposed.length > 0 && (
-              <div className="p-4 mt-auto border-t border-outline-variant bg-surface-container-lowest rounded-b-xl flex justify-between items-center">
-                <span className="text-body-sm font-body-sm text-on-surface-variant">
-                  Showing {page * pageSize + 1}–{Math.min((page + 1) * pageSize, proposed.length)} of {proposed.length} assignments
+              <div className="p-5 mt-auto border-t border-outline-variant/30 bg-white rounded-b-3xl flex justify-between items-center">
+                <span className="text-label-caps font-bold text-outline">
+                  SHOWING {page * pageSize + 1}–{Math.min((page + 1) * pageSize, proposed.length)} OF {proposed.length}
                 </span>
                 <div className="flex gap-2">
                   <button
                     onClick={() => setPage(Math.max(0, page - 1))}
                     disabled={page === 0}
-                    className="px-3 py-1 text-on-surface-variant hover:text-primary transition-colors text-body-sm font-body-sm flex items-center gap-1 disabled:opacity-30"
+                    className="px-4 py-2 text-outline hover:text-primary hover:bg-surface rounded-lg transition-all font-bold flex items-center gap-1 disabled:opacity-30 disabled:hover:bg-transparent"
                   >
-                    <span className="material-symbols-outlined text-[16px]">chevron_left</span> Prev
+                    <span className="material-symbols-outlined text-[18px]">chevron_left</span> Prev
                   </button>
                   <button
                     onClick={() => setPage(Math.min(totalPages - 1, page + 1))}
                     disabled={page >= totalPages - 1}
-                    className="px-3 py-1 text-on-surface-variant hover:text-primary transition-colors text-body-sm font-body-sm flex items-center gap-1 disabled:opacity-30"
+                    className="px-4 py-2 text-outline hover:text-primary hover:bg-surface rounded-lg transition-all font-bold flex items-center gap-1 disabled:opacity-30 disabled:hover:bg-transparent"
                   >
-                    Next <span className="material-symbols-outlined text-[16px]">chevron_right</span>
+                    Next <span className="material-symbols-outlined text-[18px]">chevron_right</span>
                   </button>
                 </div>
               </div>

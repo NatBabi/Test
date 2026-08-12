@@ -116,10 +116,10 @@ export default function IntakePage() {
   return (
     <div className="space-y-grid-gutter animate-fade-in-up">
       {/* Header */}
-      <header className="flex justify-between items-end pb-4 border-b border-surface-variant">
+      <header className="flex justify-between items-end pb-4 border-b border-outline-variant/30">
         <div>
-          <h2 className="text-display-lg font-display-lg text-primary">Device Triage Station</h2>
-          <p className="text-body-md font-body-md text-on-surface-variant mt-1">
+          <h2 className="text-display-lg font-display-lg text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Device Triage Station</h2>
+          <p className="text-body-md font-body-md text-on-surface-variant mt-1 tracking-wide">
             Scan or enter serial number to begin intake process.
           </p>
         </div>
@@ -129,12 +129,12 @@ export default function IntakePage() {
         {/* Left Column */}
         <div className="lg:col-span-8 flex flex-col gap-stack-gap">
           {/* Search Bar */}
-          <section className="bg-surface border border-outline-variant rounded-xl p-6 shadow-sm">
-            <label className="block text-body-sm font-body-sm font-bold text-on-surface mb-2">Serial Number / Asset Tag Search</label>
-            <div className="relative">
-              <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">barcode_scanner</span>
+          <section className="bg-white border border-outline-variant/30 rounded-3xl p-6 md:p-8 shadow-soft-sm hover-lift relative group overflow-visible z-20">
+            <label className="block text-body-md font-body-md font-bold text-on-surface mb-3 tracking-wide">Serial Number / Asset Tag Search</label>
+            <div className={`relative transition-all duration-500 rounded-2xl ${searchQuery ? 'shadow-soft-md' : 'shadow-glow'}`}>
+              <span className="material-symbols-outlined absolute left-5 top-1/2 -translate-y-1/2 text-outline text-[24px] group-focus-within:text-primary transition-colors">barcode_scanner</span>
               <input
-                className="w-full pl-12 pr-28 py-3 rounded-lg border border-outline-variant focus:border-[#3B82F6] focus:ring-2 focus:ring-[#3B82F6]/20 transition-all text-body-md font-body-md font-mono-data bg-white"
+                className="w-full pl-14 pr-32 py-4 rounded-2xl border border-outline-variant/50 focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all text-[20px] font-mono-data bg-white placeholder:text-outline/60"
                 placeholder="Scan barcode or type S/N..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
@@ -144,14 +144,16 @@ export default function IntakePage() {
               <button
                 onClick={handleSearch}
                 disabled={searching || !searchQuery.trim()}
-                className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#3B82F6] text-white px-4 py-1.5 rounded-md text-body-sm font-body-sm font-bold hover:opacity-90 disabled:opacity-50 transition-all"
+                className="absolute right-3 top-1/2 -translate-y-1/2 bg-gradient-to-r from-primary to-secondary text-white px-6 py-2.5 rounded-xl text-body-sm font-bold shadow-soft-sm hover:shadow-glow hover:-translate-y-0.5 active:scale-95 disabled:opacity-50 disabled:hover:translate-y-0 disabled:hover:shadow-none transition-all"
               >
-                {searching ? 'Searching...' : 'Search'}
+                {searching ? (
+                  <span className="flex items-center gap-2"><span className="material-symbols-outlined animate-spin text-[18px]">sync</span>Searching</span>
+                ) : 'Search'}
               </button>
             </div>
             {searchError && (
-              <p className="mt-2 text-body-sm text-error flex items-center gap-1">
-                <span className="material-symbols-outlined text-[16px]">error</span>
+              <p className="mt-3 text-body-sm text-error flex items-center gap-2 animate-fade-in-up bg-error/10 px-3 py-1.5 rounded-lg w-max">
+                <span className="material-symbols-outlined text-[18px]">error</span>
                 {searchError}
               </p>
             )}
@@ -159,10 +161,10 @@ export default function IntakePage() {
 
           {/* Device Details (shown after search) */}
           {searchResult && (
-            <>
+            <div className="animate-fade-in-up">
               <section className="grid grid-cols-1 md:grid-cols-2 gap-stack-gap">
                 {/* Device Info Card */}
-                <div className="bg-white border border-outline-variant rounded-xl p-5 shadow-sm relative overflow-hidden">
+                <div className="bg-white border border-outline-variant/30 rounded-3xl p-6 shadow-soft-sm relative overflow-hidden hover-lift">
                   <div className="absolute top-0 right-0 p-4 opacity-10">
                     <span className="material-symbols-outlined text-[64px]">laptop_chromebook</span>
                   </div>
@@ -199,27 +201,30 @@ export default function IntakePage() {
                 </div>
 
                 {/* Assignment History Card */}
-                <div className="bg-white border border-outline-variant rounded-xl p-5 shadow-sm">
-                  <h3 className="text-title-sm font-title-sm text-primary mb-4 border-b border-surface-variant pb-2">Assignment History</h3>
-                  <div className="space-y-4">
+                <div className="bg-white border border-outline-variant/30 rounded-3xl p-6 shadow-soft-sm hover-lift">
+                  <h3 className="text-title-sm font-title-sm text-on-surface mb-4 border-b border-outline-variant/30 pb-3 flex items-center gap-2">
+                    <span className="material-symbols-outlined text-secondary">history</span>
+                    Assignment History
+                  </h3>
+                  <div className="space-y-5">
                     {searchResult.assignment_history && searchResult.assignment_history.length > 0 ? (
                       searchResult.assignment_history.map((a, i) => (
-                        <div key={i} className={`flex items-start gap-3 ${i > 0 ? 'opacity-60' : ''}`}>
-                          <div className="bg-surface-container-low p-2 rounded-full mt-1">
+                        <div key={i} className={`flex items-start gap-4 ${i > 0 ? 'opacity-60 grayscale' : ''}`}>
+                          <div className="bg-surface-container border border-outline-variant/50 p-2 rounded-xl mt-1 shadow-sm">
                             <span className="material-symbols-outlined text-sm text-on-surface-variant">person</span>
                           </div>
                           <div>
-                            <p className="text-body-sm font-body-sm font-bold text-on-surface">
-                              {a.student_name} (Grade {a.grade})
+                            <p className="text-body-md font-body-md font-bold text-on-surface">
+                              {a.student_name} <span className="text-outline text-body-sm font-normal ml-1">Grade {a.grade}</span>
                             </p>
-                            <p className="text-label-caps font-label-caps text-on-surface-variant">
+                            <p className="text-label-caps font-label-caps text-on-surface-variant/80 mt-1">
                               {a.returned_date ? `Returned: ${new Date(a.returned_date).toLocaleDateString()}` : 'Currently Assigned'}
                             </p>
                           </div>
                         </div>
                       ))
                     ) : (
-                      <p className="text-body-sm text-on-surface-variant">No assignment history</p>
+                      <p className="text-body-sm text-on-surface-variant italic">No assignment history found.</p>
                     )}
                   </div>
                 </div>
@@ -227,7 +232,7 @@ export default function IntakePage() {
 
               {/* Condition Assessment Form */}
               {!submitSuccess ? (
-                <section className="bg-white border border-outline-variant rounded-xl p-6 shadow-sm">
+                <section className="bg-white border border-outline-variant/30 rounded-3xl p-6 md:p-8 shadow-soft-sm hover-lift mt-6">
                   <h3 className="text-title-sm font-title-sm text-primary mb-5">Condition Assessment</h3>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
                     {conditionOptions.map((opt) => (
@@ -257,73 +262,73 @@ export default function IntakePage() {
                       onChange={(e) => setTriageNotes(e.target.value)}
                     />
                   </div>
-                  <div className="flex justify-end gap-3">
+                  <div className="flex justify-end gap-3 pt-2">
                     <button
                       onClick={() => { setSearchResult(null); setSearchQuery(''); }}
-                      className="px-5 py-2 text-primary font-body-sm text-body-sm hover:bg-surface-container-low rounded-lg transition-colors"
+                      className="px-6 py-2.5 text-on-surface-variant font-bold hover:bg-surface-variant rounded-xl transition-colors"
                     >
                       Clear
                     </button>
                     <button
                       onClick={handleSubmitTriage}
                       disabled={submitting}
-                      className="px-5 py-2 bg-[#3B82F6] text-white font-body-sm text-body-sm font-bold rounded-lg shadow-sm hover:opacity-90 transition-opacity disabled:opacity-50"
+                      className="px-8 py-2.5 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-xl shadow-soft-sm hover:shadow-glow hover:-translate-y-0.5 active:scale-95 transition-all disabled:opacity-50 disabled:hover:translate-y-0 disabled:hover:shadow-none"
                     >
                       {submitting ? 'Submitting...' : 'Submit Triage'}
                     </button>
                   </div>
                 </section>
               ) : (
-                <section className="bg-[#DCFCE7] border border-[#86EFAC] rounded-xl p-6 flex items-center gap-4">
+                <section className="bg-[#F0FDF4] border border-[#86EFAC] rounded-3xl p-6 md:p-8 flex items-center gap-5 shadow-soft-sm mt-6 animate-fade-in-up">
                   <span className="material-symbols-outlined text-[32px] text-[#166534]" style={{ fontVariationSettings: "'FILL' 1" }}>task_alt</span>
                   <div>
                     <h3 className="text-title-sm font-title-sm text-[#166534]">Triage Submitted Successfully</h3>
-                    <p className="text-body-sm text-[#166534]/80">
-                      Device {searchResult.asset_tag} marked as <strong>{selectedCondition.replace(/_/g, ' ')}</strong>.
+                    <p className="text-body-sm text-[#166534]/80 mt-1">
+                      Device <span className="font-mono-data font-bold">{searchResult.asset_tag}</span> marked as <strong className="uppercase tracking-wide">{selectedCondition.replace(/_/g, ' ')}</strong>.
                     </p>
                   </div>
                   <button
                     onClick={() => { setSearchResult(null); setSearchQuery(''); setSubmitSuccess(false); }}
-                    className="ml-auto px-4 py-2 bg-[#166534] text-white rounded-lg text-body-sm font-bold hover:opacity-90"
+                    className="ml-auto px-6 py-3 bg-[#166534] text-white rounded-xl font-bold shadow-sm hover:-translate-y-0.5 hover:shadow-md transition-all active:scale-95"
                   >
                     Scan Next Device
                   </button>
                 </section>
               )}
-            </>
+            </div>
           )}
         </div>
 
         {/* Right Column */}
         <div className="lg:col-span-4 flex flex-col gap-stack-gap">
           {/* Pipeline Stepper */}
-          <section className="bg-surface-container-low border border-outline-variant rounded-xl p-5 shadow-sm">
+          <section className="bg-white border border-outline-variant/30 rounded-3xl p-6 shadow-soft-sm hover-lift">
             <h3 className="text-title-sm font-title-sm text-primary mb-6">Current Pipeline</h3>
             <div className="relative">
-              <div className="absolute left-4 top-4 bottom-4 w-px bg-outline-variant" />
+              <div className="absolute left-5 top-4 bottom-4 w-0.5 bg-surface-variant" />
               <ul className="space-y-6 relative z-10">
                 {pipelineSteps.map((step, i) => {
                   const count = pipeline[step.key as keyof PipelineStats];
                   const isActive = i === 0;
                   return (
-                    <li key={step.key} className="flex items-start gap-4">
-                      <div className={`w-8 h-8 rounded-full flex items-center justify-center ring-4 ring-surface-container-low shrink-0 ${
+                    <li key={step.key} className="flex items-start gap-5 group">
+                      <div className={`w-10 h-10 rounded-full flex items-center justify-center ring-4 ring-white shrink-0 transition-transform duration-300 group-hover:scale-110 ${
                         isActive
-                          ? 'bg-[#3B82F6] text-white'
-                          : 'bg-surface-variant border border-outline-variant text-outline'
+                          ? 'bg-gradient-to-br from-primary to-secondary text-white shadow-glow'
+                          : 'bg-surface-variant text-outline'
                       }`}>
-                        <span className="material-symbols-outlined text-[18px]">{step.icon}</span>
+                        <span className="material-symbols-outlined text-[20px]" style={isActive ? { fontVariationSettings: "'FILL' 1" } : {}}>{step.icon}</span>
                       </div>
-                      <div className="pt-1 flex-1">
+                      <div className="pt-1.5 flex-1">
                         <div className="flex items-center justify-between">
-                          <p className={`text-body-sm font-body-sm ${isActive ? 'font-bold text-primary' : 'text-on-surface-variant'}`}>
+                          <p className={`text-body-md font-body-md ${isActive ? 'font-bold text-on-surface' : 'text-outline font-medium'}`}>
                             {step.label}
                           </p>
-                          <span className="text-mono-data font-mono-data text-on-surface-variant bg-surface-variant px-2 py-0.5 rounded text-[11px]">
+                          <span className={`text-mono-data font-mono-data px-2.5 py-0.5 rounded-md text-[12px] font-bold ${isActive ? 'bg-primary/10 text-primary' : 'bg-surface-variant text-outline'}`}>
                             {count}
                           </span>
                         </div>
-                        {isActive && <p className="text-label-caps font-label-caps text-on-surface-variant">Current Stage</p>}
+                        {isActive && <p className="text-[10px] text-primary tracking-widest uppercase font-bold mt-1">Current Stage</p>}
                       </div>
                     </li>
                   );
@@ -333,7 +338,7 @@ export default function IntakePage() {
           </section>
 
           {/* Batch CSV Import */}
-          <section className="bg-white border border-outline-variant rounded-xl p-6 shadow-sm flex flex-col justify-center items-center text-center">
+          <section className="bg-white border border-outline-variant/30 rounded-3xl p-6 shadow-soft-sm hover-lift flex flex-col justify-center items-center text-center">
             <div className="w-12 h-12 bg-secondary-fixed text-on-secondary-fixed rounded-full flex items-center justify-center mb-4">
               <span className="material-symbols-outlined">upload_file</span>
             </div>

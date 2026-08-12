@@ -22,7 +22,14 @@ export default function AppShell({ children }: { children: ReactNode }) {
 
   return (
     <AppContext.Provider value={{ currentRole, setCurrentRole }}>
-      <div className="flex min-h-screen">
+      <div className="flex min-h-screen relative overflow-hidden bg-background">
+        {/* Background Mesh Gradient */}
+        <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10">
+          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-primary/10 blur-[120px]"></div>
+          <div className="absolute top-[20%] right-[-5%] w-[30%] h-[50%] rounded-full bg-secondary/10 blur-[120px]"></div>
+          <div className="absolute bottom-[-10%] left-[20%] w-[50%] h-[40%] rounded-full bg-primary-light/50 blur-[120px]"></div>
+        </div>
+
         {/* Side Navigation */}
         <SideNavBar currentRole={currentRole} onRoleChange={setCurrentRole} />
 

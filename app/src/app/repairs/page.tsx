@@ -113,11 +113,11 @@ export default function RepairsPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-2">
         <div>
-          <h2 className="text-display-lg font-display-lg text-on-surface tracking-tight">Repair Tracking</h2>
-          <p className="text-body-md font-body-md text-on-surface-variant mt-1">Manage active device repairs and donor parts inventory.</p>
+          <h2 className="text-display-lg font-display-lg text-transparent bg-clip-text bg-gradient-to-r from-on-surface to-on-surface-variant tracking-tight">Repair Tracking</h2>
+          <p className="text-body-md font-body-md text-on-surface-variant mt-1 tracking-wide">Manage active device repairs and donor parts inventory.</p>
         </div>
-        <button className="bg-surface text-on-surface border border-outline-variant hover:bg-surface-container-low px-4 py-2 rounded-lg text-body-sm font-body-sm font-medium transition-shadow hover:shadow-sm flex items-center gap-2">
-          <span className="material-symbols-outlined text-[18px]">print</span>
+        <button className="bg-white text-on-surface border border-outline-variant/30 hover:text-primary px-5 py-2.5 rounded-xl text-label-caps font-bold transition-all shadow-soft-sm hover:shadow-soft-md hover-lift flex items-center gap-2">
+          <span className="material-symbols-outlined text-[20px]">print</span>
           Print Manifest
         </button>
       </div>
@@ -134,36 +134,42 @@ export default function RepairsPage() {
 
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-grid-gutter">
-        <div className="bg-surface border border-outline-variant rounded-lg p-4 flex flex-col justify-between">
-          <div className="flex justify-between items-start mb-2">
-            <span className="text-label-caps font-label-caps text-on-surface-variant">Devices in Repair</span>
-            <span className="material-symbols-outlined text-outline">laptop_mac</span>
+        <div className="bg-white border border-outline-variant/30 rounded-3xl p-6 flex flex-col justify-between shadow-soft-sm hover-lift group">
+          <div className="flex justify-between items-start mb-6">
+            <span className="text-label-caps text-outline font-bold tracking-widest">Devices in Repair</span>
+            <div className="w-10 h-10 rounded-xl bg-error/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <span className="material-symbols-outlined text-error">build</span>
+            </div>
           </div>
-          <div className="flex items-baseline gap-2">
+          <div className="flex items-baseline gap-3">
             <span className="text-display-lg font-display-lg text-on-surface">{stats.inRepair}</span>
-            <span className="text-body-sm font-body-sm text-error bg-error-container/30 px-2 rounded-full">active</span>
+            <span className="text-label-caps text-error bg-error/10 px-2 py-1 rounded-md">active</span>
           </div>
         </div>
-        <div className="bg-surface border border-outline-variant rounded-lg p-4 flex flex-col justify-between">
-          <div className="flex justify-between items-start mb-2">
-            <span className="text-label-caps font-label-caps text-on-surface-variant">Awaiting Parts</span>
-            <span className="material-symbols-outlined text-outline">hourglass_empty</span>
+        <div className="bg-white border border-outline-variant/30 rounded-3xl p-6 flex flex-col justify-between shadow-soft-sm hover-lift group">
+          <div className="flex justify-between items-start mb-6">
+            <span className="text-label-caps text-outline font-bold tracking-widest">Awaiting Parts</span>
+            <div className="w-10 h-10 rounded-xl bg-warning/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <span className="material-symbols-outlined text-warning">hourglass_empty</span>
+            </div>
           </div>
-          <div className="flex items-baseline gap-2">
+          <div className="flex items-baseline gap-3">
             <span className="text-display-lg font-display-lg text-on-surface">{stats.awaitingParts}</span>
-            <span className="text-body-sm font-body-sm text-on-surface-variant">
+            <span className="text-label-caps text-on-surface-variant">
               {stats.partsNeeded.length > 0 && `${stats.partsNeeded[0].count} ${stats.partsNeeded[0].issue_category}s needed`}
             </span>
           </div>
         </div>
-        <div className="bg-surface border border-outline-variant rounded-lg p-4 flex flex-col justify-between">
-          <div className="flex justify-between items-start mb-2">
-            <span className="text-label-caps font-label-caps text-on-surface-variant">Donor Devices Available</span>
-            <span className="material-symbols-outlined text-outline">recycling</span>
+        <div className="bg-white border border-outline-variant/30 rounded-3xl p-6 flex flex-col justify-between shadow-soft-sm hover-lift group">
+          <div className="flex justify-between items-start mb-6">
+            <span className="text-label-caps text-outline font-bold tracking-widest">Donor Devices Available</span>
+            <div className="w-10 h-10 rounded-xl bg-success/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <span className="material-symbols-outlined text-success">recycling</span>
+            </div>
           </div>
-          <div className="flex items-baseline gap-2">
+          <div className="flex items-baseline gap-3">
             <span className="text-display-lg font-display-lg text-on-surface">{stats.donorDevices}</span>
-            <span className="text-body-sm font-body-sm text-secondary bg-secondary-container/50 px-2 rounded-full">
+            <span className={`text-label-caps px-2 py-1 rounded-md ${stats.donorDevices > 3 ? 'bg-success/10 text-success' : 'bg-warning/10 text-warning'}`}>
               {stats.donorDevices > 3 ? 'High stock' : 'Low stock'}
             </span>
           </div>
@@ -173,13 +179,13 @@ export default function RepairsPage() {
       {/* Main Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-grid-gutter">
         {/* Active Repairs Table */}
-        <div className="lg:col-span-8 bg-surface border border-outline-variant rounded-xl overflow-hidden flex flex-col shadow-sm">
-          <div className="p-4 border-b border-outline-variant flex justify-between items-center bg-[#F8FAFC]">
+        <div className="lg:col-span-8 bg-white border border-outline-variant/30 rounded-3xl overflow-hidden flex flex-col shadow-soft-sm hover-lift transition-all">
+          <div className="p-6 border-b border-outline-variant/30 flex justify-between items-center bg-white">
             <h3 className="text-title-sm font-title-sm text-on-surface">Active Repairs</h3>
-            <div className="relative">
-              <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+            <div className="relative group">
+              <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-[20px] group-focus-within:text-primary transition-colors">search</span>
               <input
-                className="pl-9 pr-4 py-1.5 border border-outline-variant rounded-lg text-body-sm font-body-sm w-[200px] focus:outline-none focus:border-[#3B82F6] focus:ring-1 focus:ring-[#3B82F6] transition-all bg-surface"
+                className="pl-12 pr-4 py-2 border border-outline-variant/50 rounded-xl text-body-sm font-body-sm w-[240px] focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all bg-white shadow-soft-sm"
                 placeholder="Search Tag or S/N..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
@@ -189,49 +195,49 @@ export default function RepairsPage() {
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="bg-[#F8FAFC] border-b border-outline-variant">
-                  <th className="p-table-cell-padding text-label-caps font-label-caps text-secondary font-medium">Asset Tag</th>
-                  <th className="p-table-cell-padding text-label-caps font-label-caps text-secondary font-medium">Model</th>
-                  <th className="p-table-cell-padding text-label-caps font-label-caps text-secondary font-medium">Issue</th>
-                  <th className="p-table-cell-padding text-label-caps font-label-caps text-secondary font-medium">Status</th>
-                  <th className="p-table-cell-padding text-label-caps font-label-caps text-secondary font-medium text-right">Actions</th>
+                <tr className="bg-white border-b border-outline-variant/30">
+                  <th className="p-4 text-label-caps font-label-caps text-outline font-bold tracking-wider">Asset Tag</th>
+                  <th className="p-4 text-label-caps font-label-caps text-outline font-bold tracking-wider">Model</th>
+                  <th className="p-4 text-label-caps font-label-caps text-outline font-bold tracking-wider">Issue</th>
+                  <th className="p-4 text-label-caps font-label-caps text-outline font-bold tracking-wider">Status</th>
+                  <th className="p-4 text-label-caps font-label-caps text-outline font-bold tracking-wider text-right">Actions</th>
                 </tr>
               </thead>
-              <tbody className="text-body-sm font-body-sm text-on-surface divide-y divide-[#F1F5F9]">
+              <tbody className="text-body-sm font-body-sm text-on-surface divide-y divide-outline-variant/10">
                 {filteredRepairs.map((repair) => {
                   const badge = statusBadge[repair.status] || statusBadge.triage;
                   return (
-                    <tr key={repair.id} className="hover:bg-[#F8FAFC] transition-colors group">
-                      <td className="p-table-cell-padding font-mono-data text-mono-data">#{repair.asset_tag}</td>
-                      <td className="p-table-cell-padding">{repair.model}</td>
-                      <td className="p-table-cell-padding text-on-surface-variant">{repair.issue}</td>
-                      <td className="p-table-cell-padding">
-                        <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold ${badge.bg}`}>
+                    <tr key={repair.id} className="hover:bg-surface-variant/30 transition-colors group">
+                      <td className="p-4 font-mono-data text-mono-data font-bold">#{repair.asset_tag}</td>
+                      <td className="p-4 font-medium">{repair.model}</td>
+                      <td className="p-4 text-on-surface-variant truncate max-w-[150px]">{repair.issue}</td>
+                      <td className="p-4">
+                        <span className={`inline-flex items-center px-3 py-1 rounded-md text-[11px] font-bold tracking-wide uppercase ${badge.bg}`}>
                           {badge.label}
                         </span>
                       </td>
-                      <td className="p-table-cell-padding text-right">
-                        <div className="flex items-center justify-end gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <td className="p-4 text-right">
+                        <div className="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                           <button
                             onClick={() => { setTargetAssetTag(repair.asset_tag || ''); }}
-                            className="text-primary hover:text-[#3B82F6] p-1 rounded transition-colors"
+                            className="w-8 h-8 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-white flex items-center justify-center transition-colors"
                             title="Select for repair"
                           >
-                            <span className="material-symbols-outlined text-[20px]">edit_note</span>
+                            <span className="material-symbols-outlined text-[18px]">edit_note</span>
                           </button>
                           <button
                             onClick={() => handleCompleteRepair(repair.id)}
-                            className="text-[#166534] hover:text-[#15803D] p-1 rounded transition-colors"
+                            className="w-8 h-8 rounded-lg bg-success/10 text-success hover:bg-success hover:text-white flex items-center justify-center transition-colors"
                             title="Complete repair"
                           >
-                            <span className="material-symbols-outlined text-[20px]">check_circle</span>
+                            <span className="material-symbols-outlined text-[18px]">check_circle</span>
                           </button>
                           <button
                             onClick={() => handleMarkUnrepairable(repair.id)}
-                            className="text-error hover:text-[#DC2626] p-1 rounded transition-colors"
+                            className="w-8 h-8 rounded-lg bg-error/10 text-error hover:bg-error hover:text-white flex items-center justify-center transition-colors"
                             title="Mark unrepairable"
                           >
-                            <span className="material-symbols-outlined text-[20px]">cancel</span>
+                            <span className="material-symbols-outlined text-[18px]">cancel</span>
                           </button>
                         </div>
                       </td>
@@ -240,7 +246,7 @@ export default function RepairsPage() {
                 })}
                 {filteredRepairs.length === 0 && (
                   <tr>
-                    <td colSpan={5} className="p-8 text-center text-on-surface-variant">
+                    <td colSpan={5} className="p-12 text-center text-outline">
                       {searchQuery ? 'No repairs matching your search.' : 'No active repairs.'}
                     </td>
                   </tr>
@@ -253,33 +259,34 @@ export default function RepairsPage() {
         {/* Right Column: Repair Form & Parts */}
         <div className="lg:col-span-4 flex flex-col gap-grid-gutter">
           {/* Log Repair Form */}
-          <div className="bg-surface border border-outline-variant rounded-xl p-5 shadow-sm">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="material-symbols-outlined text-primary">build_circle</span>
+          <div className="bg-white border border-outline-variant/30 rounded-3xl p-6 shadow-soft-sm hover-lift transition-all">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="material-symbols-outlined text-[28px] text-primary">build_circle</span>
               <h3 className="text-title-sm font-title-sm text-on-surface">Log Repair Action</h3>
             </div>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-5">
               <div>
-                <label className="block text-body-sm font-body-sm font-bold text-on-surface mb-1">Target Asset Tag</label>
+                <label className="block text-label-caps font-bold text-outline mb-2 tracking-wider">TARGET ASSET TAG</label>
                 <input
-                  className="w-full px-3 py-2 border border-outline-variant rounded-lg text-body-sm font-body-sm focus:outline-none focus:border-[#3B82F6] focus:ring-1 focus:ring-[#3B82F6] transition-all"
+                  className="w-full px-4 py-2.5 border border-outline-variant/50 rounded-xl text-body-md font-mono-data focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all shadow-soft-sm"
                   placeholder="e.g. AS-9921"
                   value={targetAssetTag}
                   onChange={(e) => setTargetAssetTag(e.target.value)}
                 />
               </div>
-              <div className="p-3 bg-[#F8FAFC] border border-[#E2E8F0] rounded-lg">
-                <label className="block text-body-sm font-body-sm font-bold text-on-surface mb-1">Link Donor Device (Optional)</label>
-                <p className="text-[12px] text-on-surface-variant mb-2 leading-tight">If salvaging parts, enter the donor asset tag to track component cannibalization.</p>
+              <div className="p-4 bg-surface border border-outline-variant/50 rounded-2xl relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-16 h-16 bg-secondary/5 rounded-bl-full pointer-events-none"></div>
+                <label className="block text-label-caps font-bold text-outline mb-1 tracking-wider">LINK DONOR (OPTIONAL)</label>
+                <p className="text-[12px] text-outline mb-3 leading-tight">If salvaging parts, enter the donor asset tag.</p>
                 <input
-                  className="w-full px-3 py-2 border border-outline-variant rounded-lg text-body-sm font-body-sm focus:outline-none focus:border-[#3B82F6] focus:ring-1 focus:ring-[#3B82F6] transition-all bg-surface mb-3"
+                  className="w-full px-4 py-2.5 border border-outline-variant/50 rounded-xl text-body-md font-mono-data focus:outline-none focus:border-secondary focus:ring-4 focus:ring-secondary/10 transition-all bg-white mb-3 shadow-soft-sm"
                   placeholder="Donor Asset Tag"
                   value={donorAssetTag}
                   onChange={(e) => setDonorAssetTag(e.target.value)}
                 />
-                <label className="block text-body-sm font-body-sm font-bold text-on-surface mb-1">Part Harvested</label>
+                <label className="block text-label-caps font-bold text-outline mb-2 tracking-wider">PART HARVESTED</label>
                 <select
-                  className="w-full px-3 py-2 border border-outline-variant rounded-lg text-body-sm font-body-sm focus:outline-none focus:border-[#3B82F6] focus:ring-1 focus:ring-[#3B82F6] bg-surface"
+                  className="w-full px-4 py-2.5 border border-outline-variant/50 rounded-xl text-body-md focus:outline-none focus:border-secondary focus:ring-4 focus:ring-secondary/10 bg-white shadow-soft-sm"
                   value={partHarvested}
                   onChange={(e) => setPartHarvested(e.target.value)}
                 >
@@ -293,19 +300,19 @@ export default function RepairsPage() {
                 </select>
               </div>
               <div>
-                <label className="block text-body-sm font-body-sm font-bold text-on-surface mb-1">Resolution Notes</label>
+                <label className="block text-label-caps font-bold text-outline mb-2 tracking-wider">RESOLUTION NOTES</label>
                 <textarea
-                  className="w-full px-3 py-2 border border-outline-variant rounded-lg text-body-sm font-body-sm focus:outline-none focus:border-[#3B82F6] focus:ring-1 focus:ring-[#3B82F6] transition-all resize-none"
+                  className="w-full px-4 py-3 border border-outline-variant/50 rounded-xl text-body-md focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all resize-none shadow-soft-sm"
                   placeholder="Brief description of fix..."
                   rows={2}
                   value={resolutionNotes}
                   onChange={(e) => setResolutionNotes(e.target.value)}
                 />
               </div>
-              <div className="flex gap-2 mt-2">
+              <div className="flex gap-3 mt-2">
                 <button
                   onClick={handleLinkDonor}
-                  className="flex-1 bg-surface text-primary border border-outline-variant hover:bg-[#F8FAFC] py-2 rounded-lg text-body-sm font-body-sm font-semibold transition-colors"
+                  className="flex-1 bg-white text-secondary border border-outline-variant/30 hover:border-secondary/50 py-3 rounded-xl font-bold transition-all shadow-soft-sm hover:shadow-soft-md hover-lift"
                 >
                   Link Donor
                 </button>
@@ -316,7 +323,7 @@ export default function RepairsPage() {
                     setResolutionNotes('');
                     setTimeout(() => setFormMessage(null), 3000);
                   }}
-                  className="flex-1 bg-[#3B82F6] text-on-primary hover:bg-[#2563EB] py-2 rounded-lg text-body-sm font-body-sm font-semibold transition-colors shadow-sm"
+                  className="flex-1 bg-gradient-to-r from-primary to-secondary text-white py-3 rounded-xl font-bold transition-all shadow-soft-sm hover:shadow-glow hover:-translate-y-0.5 active:scale-95"
                 >
                   Complete Repair
                 </button>
@@ -325,31 +332,33 @@ export default function RepairsPage() {
           </div>
 
           {/* Harvested Parts */}
-          <div className="bg-surface border border-outline-variant rounded-xl overflow-hidden shadow-sm flex-1">
-            <div className="p-4 border-b border-outline-variant bg-[#F8FAFC] flex justify-between items-center">
-              <h3 className="text-body-md font-body-md font-semibold text-on-surface">Harvested Parts</h3>
-              <button className="text-label-caps font-label-caps text-[#3B82F6] hover:underline">View All</button>
+          <div className="bg-white border border-outline-variant/30 rounded-3xl overflow-hidden shadow-soft-sm hover-lift transition-all flex-1 flex flex-col">
+            <div className="p-6 border-b border-outline-variant/30 flex justify-between items-center">
+              <h3 className="text-title-sm font-bold text-on-surface">Harvested Parts</h3>
+              <button className="text-label-caps font-bold text-secondary hover:text-primary transition-colors">View All</button>
             </div>
-            <div className="p-2">
+            <div className="p-2 flex-1">
               <table className="w-full text-left border-collapse">
-                <tbody className="text-[13px] font-body-sm text-on-surface divide-y divide-[#F1F5F9]">
+                <tbody className="text-body-sm font-medium text-on-surface divide-y divide-outline-variant/10">
                   {parts.map((part) => (
-                    <tr key={part.part_harvested} className="hover:bg-[#F8FAFC]">
-                      <td className="py-2 px-2 flex items-center gap-2">
-                        <span className="material-symbols-outlined text-[16px] text-outline">
+                    <tr key={part.part_harvested} className="hover:bg-surface-variant/30 transition-colors">
+                      <td className="p-3 flex items-center gap-3">
+                        <span className="w-8 h-8 rounded-lg bg-surface flex items-center justify-center material-symbols-outlined text-[18px] text-outline border border-outline-variant/30">
                           {partIcons[part.part_harvested] || 'settings'}
                         </span>
-                        <span className="capitalize">{part.part_harvested}</span>
-                        <span className="text-[10px] text-on-surface-variant">({part.donor_models})</span>
+                        <div>
+                          <p className="capitalize font-bold">{part.part_harvested}</p>
+                          <p className="text-[11px] text-outline">from {part.donor_models}</p>
+                        </div>
                       </td>
-                      <td className={`py-2 px-2 text-right font-medium ${part.available_count <= 2 ? 'text-error' : ''}`}>
-                        {part.available_count}
+                      <td className={`p-3 text-right font-bold ${part.available_count <= 2 ? 'text-error' : 'text-success'}`}>
+                        {part.available_count} in stock
                       </td>
                     </tr>
                   ))}
                   {parts.length === 0 && (
                     <tr>
-                      <td colSpan={2} className="py-4 text-center text-on-surface-variant">No harvested parts</td>
+                      <td colSpan={2} className="p-8 text-center text-outline">No harvested parts</td>
                     </tr>
                   )}
                 </tbody>
