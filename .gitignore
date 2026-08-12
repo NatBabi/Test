@@ -141,3 +141,10 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# Ignore AI Assistant folders
+.claude/
+.gemini/
+.impeccable/
+.vscode/
+.angular/   

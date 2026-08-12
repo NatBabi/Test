@@ -1,0 +1,425 @@
+device_mac,device_serial,,Source List,,Status
+Student Grade,Device Name ,Mac Address,Device Serial#,Charger #,
+6,Dell-CB-25-92,a0:d3:65:ad:a5:ca,485JD74,25-20,Good Condition
+6,Dell-CB-25-97,a0:d3:65:ad:b7:3b,1SBJD74,25-25,Good Condition
+6,Dell-CB-25-132,a0:d3:65:ad:a2:78,J05JD74,25-60,"Missing keyboard keys “4""""F4"""
+6,Dell-CB-25-81,a0:d3:65:ad:ac:f5,BWHKD74,25-09,Good Condition
+6,Dell-CB-25-100,a0:d3:65:ad:ab:47,GWHKD74,25-28,Good Condition
+6,Lenv-CB-26-09,70:15:fb:01:ce:e4,PF5G790P,26-09,
+6,Dell-CB-25-121,a0:d3:65:ae:01:aa,FV0KD74,25-49,Good Condition
+6,Dell-CB-25-99,a0:d3:65:ad:f9:58,JC5JD74,25-27,Good Condition
+6,Dell-CB-25-104,a0:d3:65:ad:a4:b7,C3JJD74,25-32,Good Condition
+6,Dell-CB-25-78,a0:d3:65:ad:cf:fa,68CLD74,25-06,Good Condition
+6,Dell-CB-25-118,a0:d3:65:ad:6c:fe,99WKD74,25-46,Good Condition
+6,Dell-CB-25-110,a0:d3:65:ae:23:f1,800JD74,25-38,Good Condition
+6,Dell-CB-25-98,a0:d3:65:ae:5c:0e,CV0KD74,25-26,Good Condition
+6,Dell-CB-25-130,a0:d3:65:ae:08:0d,140JD74,25-58,Good Condition
+6,Dell-CB-25-127,a0:d3:65:ad:c4:a6,7M0LD74,25-55,Good Condition
+6,Dell-CB-25-105,a0:d3:65:ad:d4:f5,9B5JD74,25-33,Chipped back cover edge
+6,Dell-CB-25-116,a0:d3:65:ae:11:04,BVZHD74,25-44,Good Condition
+6,Dell-CB-25-83,a0:d3:65:ae:58:71,JZNLD74,25-11,Good Condition
+6,Dell-CB-25-117,a0:d3:65:ad:c4:88,G4JJD74,25-45,Chipped back cover edge
+6,Dell-CB-25-125,a0:d3:65:ae:19:ec,GK5KD74,25-53,Good Condition
+6,Dell-CB-25-113,a0:d3:65:ad:51:33,CYZHD74,25-41,Good Condition
+6,Dell-CB-25-91,a0:d3:65:ad:c3:f2,38PJD74,25-19,Good Condition
+6,Dell-CB-25-131,a0:d3:65:ae:03:a3,2QBJD74,25-59,Good Condition
+6,Dell-CB-25-107,a0:d3:65:ad:fc:50,3J5JD74,25-35,Good Condition
+6,Dell-CB-25-124,a0:d3:65:ad:3b:f8,3Q0LD74,25-52,Good Condition
+6,Dell-CB-25-29,a0:d3:65:ad:b5:fb,56PJD74,,Good Condition
+6,Dell-CB-25-90,a0:d3:65:ab:c2:46,39BJD74,25-18,Good Condition 
+6,Dell-CB-25-88,a0:d3:65:ae:00:e2,B4JJD74,25-16,Good Condition 
+6,Dell-CB-25-85,a0:d3:65:ae:03:b7,J7PLD74,25-13,“Alt” key not functioning well 
+6,Dell-CB-25-77,a0:d3:65:ae:19:a6,9GCLD74,25-05,Good Condition
+6,Dell-CB-25-136,a0:d3:65:ad:ac:50,6BVKD74,25-01,Good Condition
+6,Dell-CB-25-119,a0:d3:65:ae:00:ec,4RZHD74,25-47,Chipped back cover edge
+6,Dell-MS-22-67,48:68:4a:7c:7c:7f,GPQ26R3,40,non flip chrome book
+6,Dell-CB-25-109,a0:d3:65:ad:a2:14,D30JD74,25-37,Good Condition
+6,Dell-CB-25-129,a0:d3:65:ad:6c:9a,JX6LD74,25-57,Good Condition
+6,Dell-CB-25-79,a0:d3:65:ad:d5:68,9D5JD74,25-07,Missing keyboard keys
+6,Dell-CB-25-108,a0:d3:65:ad:d5:1d,195JD74,25-36,"Broken screen,missing ""ctrl""key and the keyboard is not responing well"
+6,Dell-CB-25-112,a0:d3:65:ad:d6:d0,75PLD74,25-40,Good Condition
+6,Dell-CB-25-76,a0:d3:65:ad:c3:f7,4S0LD74,25-04,Good Condition
+6,Dell-CB-25-87,a0:d3:65:ad:c3:9d,DV4JD74,25-15,Good Condition
+6,Dell-CB-25-126,a0:d3:65:ad:c3:d4,H00JD74,25-54,Missing Keyboard Keys
+6,Dell-CB-25-102,a0:d3:65:ab:c2:1e,26BJD74,25-30,Good Condition 
+6,Dell-MS-22-66,f8:9e:94:a0:93:5d,51K16R3,56,non flip chrome book
+6,Lenv-CB-26-03,70:15:fb:02:08:eb,PF5G6S2N,26-03,
+6,Dell-CB-25-86,a0:d3:65:82:bd:33,6MBJD74,25-14,Good Condition
+6,Dell-CB-25-101,a0:d3:65:ae:00:b0,D55JD74,25-29,Good Condition
+6,Dell-CB-25-75,a0:d3:65:ae:0d:c1,5T0LD74,25-03,Missing keyboard up arrow key
+6,Dell-CB-25-114,a0:d3:65:ad:a1:24,CG5JD74,25-42,Good Condition
+6,Dell-CB-25-115,a0:d3:65:ad:99:9a,3Y4JD74,25-43,Good Condition
+6,Dell-CB-25-120,a0:d3:65:ad:fc:69,FG5JD74,25-48,Good Condition
+6,Dell-CB-25-103,a0:d3:65:ad:a1:1f,FQBJD74,25-31,Good Condition
+6,Dell-CB-25-84,a0:d3:65:ab:bf:26,BSBKD74,25-12,Missing Key
+6,Dell-CB-25-106,a0:d3:65:ad:d3:b0,JLBJD74,25-34,Good Condition
+6,Dell-CB-25-95,a0:d3:65:ad:51:1a,450JD74,25-23,Dent on USB Port
+6,Dell-CB-25-123,a0:d3:65:ae:09:75,9LVJD74,25-51,Good Condition
+6,Dell-CB-25-80,a0:d3:65:ad:a2:05,56VJD74,25-08,Good Condition
+6,Dell-CB-25-122,a0:d3:65:ad:c3:61,DF5JD74,25-50,"Missing keyboard key ""F"""
+6,Dell-CB-25-74,a0:d3:65:ad:d6:ad,F8PLD74,,"Broken left Hinge,Board issue and Touch screen not working,Missing keyboard keys “4""""F4"" "
+6,Dell-CB-25-128,a0:d3:65:ac:ef:90,F26LD74,,Good Condition
+6,Dell-CB-25-111,a0:d3:65:ad:99:5e,2JCLD74,,Good Condition
+6,Dell-CB-25-73,a0:d3:65:ad:a5:0c,8DCLD74,,"Board issue, screen not working,Missing keyboard key ""F"""
+6,Dell-CB-25-94,d4:f3:2d:e8:ab:98,1DPJD74,,Good Condition
+7,Dell-MS-24-90,e4:60:17:ce:6a:35,J14GF14,106,Good Condition
+7,Dell-MS-24-02,e4:60:17:d1:1a:a5,JFCD514,102,Good Condition
+7,Dell-MS-24-03,d4:e9:8a:84:d8:e8,7NLD514,137,Good Condition
+7,Dell-MS-24-04,d4:e9:8a:84:cb:0f,BFFD514,78,Good Condition
+7,Dell-MS-24-05,d4:e9:8a:84:da:6e,92S3214,113,Good Condition
+7,Dell-MS-24-06,f0:20:ff:47:f9:ff,HT2GF14,159,Good Condition
+7,Dell-CB-25-133,a0:d3:65:ab:bf:6c,D45JD74,25-61,Good Condition
+7,Dell-MS-24-07,d4:e9:8a:84:ed:15,3HCD514,172,"Chipped back & front cover edge, unremovable marker/paint on front & back cover"
+7,Dell-CB-25-11,a0:d3:65:ad:e1:ac,610JD74,,Good Condition
+7,Dell-MS-24-09,e4:60:17:cf:50:94,JQ2GF14,169,Good Condition
+7,Dell-MS-24-96,d4:e9:8a:84:e7:34,BV2GF14,30,Good Condition
+7,Dell-MS-24-31,d4:e9:8a:84:d1:cc,GH4D514,95,Good Condition
+7,Dell-MS-24-102,28:c5:d2:8b:16:13,8YZ4214,121,Good Condition
+7,Dell-MS-24-13,d4:e9:8a:84:cd:ee,4CMC514,37,Chipped front cover edge
+7,Dell-CB-25-138,a0:d3:65:ae:01:55,55PJD74,25-66,Chipped front cover edge
+7,Dell-MS-21-52,d8:f8:83:72:81:61,3C22893,,Good Condition
+7,Dell-MS-24-16,d4:e9:8a:84:d9:97,10SD514,101,Chipped Back Cover Edge
+7,Dell-MS-24-109,d4:e9:8a:88:f0:c7,HGFD514,36,Chipped Back Cover Edge
+7,Dell-CB-25-135,a0:d3:65:ad:d6:cb,CQ0LD74,25-63,Broken Keyboard Cover & Dent Back Cover
+7,Dell-MS-24-19,f0:20:ff:49:f9:71,7S2GF14,189,Good Condition
+7,Dell-MS-24-20,d4:e9:8a:84:a5:0d,B5FD514,94,Good Condition
+7,Dell-MS-24-22,28:c5:d2:7b:31:df,C8CD514,65,Chipped front & back cover edge
+7,Dell-MS-24-23,d4:e9:8a:84:f2:65,39FD514,174,Good Condition
+7,Dell-CB-25-143,a0:d3:65:ae:68:43,H25JD74,25-71,Good Condition
+7,Dell-CB-25-140,a0:d3:65:ac:e7:c5,17PJD74,25-68,Good Condition
+7,Dell-MS-24-24,e4:60:17:cf:4e:7d,5CFD514,54,Good Condition
+7,Dell-MS-24-26,f0:20:ff:4c:4f:5f,3HXFF14,104,Good Condition
+7,Dell-CB-25-162,a0:d3:65:ad:00:48,JW0KD74,25-84, good condition
+7,Dell-CB-25-142,a0:d3:65:ab:c2:6e,18BJD74,25-70,Good Condition
+7,Dell-MS-24-28,d4:e9:8a:84:f0:03,B64GF14,105,Good Condition
+7,Dell-CB-25-144,a0:d3:65:ae:5a:bf,4X4JD74,25-72,Good Condition
+7,Lenv-CB-26-11,30:e3:a4:7a:27:95,PF5G5YXN,26-11,
+7,Dell-MS-24-38,f0:20:ff:4c:64:13,JX8C514,185,Good Condition
+7,Dell-MS-24-39,28:c5:d2:8b:21:62,43NB514,98,Good Condition
+7,Dell-MS-24-40,d4:e9:8a:84:d1:09,854GF14,109,Chipped lower back cover edge 
+7,Dell-MS-24-41,28:c5:d2:7e:bd:1e,9FFD514,132,Good Condition
+7,Dell-MS-24-42,f0:20:ff:47:e5:aa,C5Y3214,202,Good Condition
+7,Dell-MS-24-11,d4:e9:8a:84:d3:9d,5R2GF14,90,Good Condition
+7,Dell-MS-24-44,d4:e9:8a:84:cb:55,8XRD514,51,Chipped Back Cover Edge
+7,Dell-MS-24-46,d4:e9:8a:84:d8:66,D5YD514,108,Good Condition
+7,Dell-MS-24-47,f0:20:ff:48:05:26,52S3214,203,Chipped back cover edge 
+7,Dell-MS-24-50,d4:e9:8a:84:db:18,F4F3214,100,unremovable marker/paint on front screen cover
+7,Dell-MS-24-52,d4:e9:8a:84:cc:fe,4BFD514,157,Chipped back cover edge
+7,Dell-MS-24-17,d4:e9:8a:84:d6:27,B1SD514,192,Good Condition
+7,Dell-MS-24-54,d4:e9:8a:84:db:ea,C1S3214,173,"losse left Hinge and touch screen not working,missing key ""N"""
+7,Dell-MS-24-57,d4:e9:8a:84:d6:04,39F3214,96,"Touch screen not working, Chipped front Cover Edge"
+7,Dell-MS-24-58,28:c5:d2:7d:aa:a0,57GC514,92,Good Condition
+7,Dell-MS-24-60,f0:20:ff:47:f9:00,1CFD514,62,Chipped back and  front cover edge 
+7,Dell-MS-24-61,f0:20:ff:4c:4f:19,FSYFF14,69,"Missing keyboard keys , broken both left ,right and back cover edge"
+7,Dell-MS-24-62,28:c5:d2:7a:ae:f4,2LMC514,150,Good Condition
+7,Dell-CB-25-137,a0:d3:65:ae:0d:a8,905JD74,25-65,Good Condition
+7,Dell-MS-24-63,d4:e9:8a:84:cb:9b,GCFD514,107,Good Condition
+7,Dell-MS-24-65,28:c5:d2:7a:b4:ee,HWSC514,199,good condition 
+7,Dell-MS-24-68,d4:e9:8a:84:f3:a5,GT9D514,145,Chipped front cover edge
+7,Dell-MS-24-106,f0:20:ff:48:08:d7,G6N4214,187,Chipped back cover edge
+7,Dell-CB-25-164,a0:d3:65:ac:90:90,23JJD74,25-86,Good Condition
+7,Dell-MS-24-71,e4:60:17:cc:d8:9b,J84GF14,60,Good Condition
+7,Dell-MS-24-72,e4:60:17:cf:28:30,7B4GF14,61,Good Condition
+7,Dell-CB-25-163,a0:d3:65:ad:d6:67,15PLD74,25-85,Good Condition
+7,Dell-MS-24-73,28:c5:d2:7d:a8:52,37GC514,97,Good Condition
+7,Dell-MS-24-32,d4:e9:8a:84:ea:7c,GV1GF14,64,Good Condition
+7,Dell-CB-25-161,a0:d3:65:ad:a2:a0,5K5KD74,25-83,Good Condition
+7,Dell-MS-24-74,f0:20:ff:4a:03:8f,7GL3214,58,Good Condition
+7,Dell-MS-24-75,d4:e9:8a:84:d8:e3,3XQFF14,110,Chipped Front cover edge
+7,Dell-MS-22-80,38:7a:0e:99:7d:c0,4VSM5R3,39,Good Condition
+7,Lenv-CB-26-05,30:e3:a4:7d:8e:df,PF5G5WS6,26-05,
+7,Dell-MS-24-77,f0:20:ff:47:e6:68,CTT4214,70,Good Condition
+7,Dell-MS-24-79,f0:20:ff:48:0d:a0,4Z34214,67,Good Condition
+7,Dell-MS-24-80,d4:e9:8a:84:e5:fe,2TT4214,191,Good Condition 
+7,Dell-MS-24-82,d4:e9:8a:84:f5:d5,G24GF14,103,Good Condition 
+7,Dell-CB-25-139,a0:d3:65:ad:c4:51,F1JJD74,25-67,"Missing keyboard key “N"""
+7,Dell-MS-24-36,f0:20:ff:4a:04:a7,484GF14,,Good Condition 
+7,Dell-MS-24-48,d4:e9:8a:84:f8:dc,JB4GF14,,Chipped back cover edge
+7,Dell-MS-24-14,28:c5:d2:8b:3f:c6,G4YD514,,Good Condition
+7,Dell-CB-25-141,a0:d3:65:ad:ae:ee,JSZHD74,,"Board issue,broken screen and missing keyboard key""N"""
+7,Dell-CB-25-134,a0:d3:65:ad:3c:4d,10JJD74,,Board issue and missing keyboard keys
+7,Dell-MS-24-35,d4:e9:8a:84:eb:9e,8W1GF14,,Chipped Front cover edge
+7,Dell-MS-24-115,f0:20:ff:48:12:a0,FR2GF14,,Board issue and screen 
+7,Dell-MS-24-30,f0:20:ff:47:f9:46,BCFD514,,Good Condition
+7,Dell-MS-22-50,28:d0:ea:b1:6e:17,hqvtmj3,,camera not working
+8,Dell-MS-24-113,28:c5:d2:8a:a2:c3,C14GF14,18,Good Condition
+8,Dell-MS-22-13,28:d0:ea:b3:f4:43,9GYJNJ3,43,Chipped back cover edg
+8,Dell-CB-25-145,a0:d3:65:ae:19:ce,9BCLD74,25-73,Good Condition 
+8,Dell-MS-24-83,d4:e9:8a:84:d5:dc,F54GF14,7,Chipped front & back cover edge
+8,Dell-CB-25-150,a0:d3:65:ad:a1:fb,33PKD74,25-78,Good Condition 
+8,Dell-CB-25-41,a0:d3:65:ae:24:69,GHCLD74,5,Good condition
+8,Dell-CB-25-146,a0:d3:65:ae:00:fb,DZ4JD74,25-74,Good condition
+8,Dell-CB-25-151,a0:d3:65:ad:3c:2f,2Q0LD74,25-79,Good Condition
+8,Dell-MS-24-112,d4:e9:8a:84:ed:c9,46FD514,2,"Broken right Hinge, Chipped front cover edge Touch screen not working,"
+8,Dell-MS-24-88,d4:e9:8a:84:e6:03,C9FD514,12,Good Condition
+8,Dell-MS-24-100,d4:e9:8a:84:de:4c,HGLD514,35,Good condition 
+8,Dell-MS-24-45,e4:60:17:d1:14:65,G84GF14,22,"Missing keyboard cover, Touch screen not working"
+8,Lenv-CB-26-10,70:15:fb:0c:64:da,PF5G9S0Q,26-10,
+8,Dell-CB-25-154,a0:d3:65:ad:d3:c4,HKBJD74,25-82,Good Condition
+8,Lenv-CB-26-07,e4:1f:d5:29:40:8c,PF5QJBJ9,26-07,
+8,Dell-MS-22-06,1c:99:57:e1:9b:91,47HTMJ3,197,Broken left Hinge and missing keyboard key
+8,Dell-MS-24-98,e4:60:17:d1:1a:96,4V9D514,1,Good Condition
+8,Dell-MS-24-49,d4:e9:8a:84:f4:13,G4Y3214,25,Good Condition
+8,Dell-MS-24-99,d4:e9:8a:84:d9:ec,JRSC514,32,Good Condition
+8,Dell-MS-24-56,f0:20:ff:4a:26:94,6N3C514,28,Good Condition
+8,Dell-MS-24-59,f0:20:ff:4c:69:31,JQ8C514,23,Good Condition
+8,Dell-MS-24-66,d4:e9:8a:84:f0:6c,F5FD514,47,Chipped back cover edge
+8,Dell-MS-24-92,f0:20:ff:48:0c:bf,4RT4214,11,Good Condition
+8,Lenv-CB-26-06,30:e3:a4:7a:35:32,PF5G5BN7,26-06,
+8,Dell-MS-24-81,d4:e9:8a:84:f1:bb,4T9D514,114, Chipped front cover edge
+8,Dell-MS-24-51,d4:e9:8a:84:f4:1d,52SD514,77,Good condition 
+8,Dell-MS-24-29,d4:e9:8a:84:d6:09,C54GF14,34,Chipped back cover edge
+8,Dell-MS-24-116,d4:e9:8a:84:ce:98,5GMC514,31,Good Condition
+8,Dell-MS-24-34,d4:e9:8a:84:ed:6a,GB86214,44,Good Condition
+8,Dell-MS-24-18,d4:e9:8a:84:cd:da,91S3214,14,Good Condition
+8,Dell-MS-24-64,d4:e9:8a:84:d6:95,63S3214,178,Good Condition
+8,Dell-MS-24-33,f0:20:ff:47:fc:fc,B005214,8,Good Condition
+8,Lenv-CB-26-08,70:15:fb:0b:74:3f,PF5G3A99,26-08,
+8,Dell-MS-24-86,f0:20:ff:47:fd:97,6XZ4214,10,Good condition 
+8,Dell-MS-24-89,d4:e9:8a:84:da:5a,G8CD514,17,"Missing keyboard key ""up arrow"""
+8,Dell-MS-24-108,f0:20:ff:47:f4:64,86N4214,29,Good condition 
+8,Dell-MS-24-85,f0:20:ff:48:09:c7,F25GF14,82,Good condition 
+8,Dell-MS-24-25,d4:e9:8a:84:fe:81,J2S3214,33,Good Condition
+8,Dell-MS-24-114,d4:e9:8a:88:b8:78,634GF14,59,Good Condition
+8,Dell-MS-24-103,d4:e9:8a:88:12:ab,GNT4214,86,Good Condition
+8,Dell-CB-25-149,a0:d3:65:ae:21:b2,FKBJD74,25-77,Broken screen 
+8,Dell-MS-24-93,d4:e9:8a:84:f1:f7,H94GF14,53,"Broken Hinge Missing keyboard cover, Touch screen not working"
+8,Dell-MS-24-110,f0:20:ff:48:15:e8,CDFD514,20,Good Condition
+8,Dell-MS-24-87,e4:60:17:cc:b6:31,8DFD514,116,Good Condition
+8,Dell-MS-24-94,f0:20:ff:48:00:ad,5HYGF14,46,Good Condition
+8,Dell-MS-21-44,d8:f8:83:be:e6:73,6HTH793,,Good Condition
+8,Dell-MS-23-114,d4:d8:53:47:28:4a,HGL51Z3,,Good Condition
+8,Dell-CB-25-153,a0:d3:65:ad:c3:cf,9W4JD74,25-81,Good Condition
+8,Dell-CB-25-148,a0:d3:65:ae:01:46,8RZHD74,25-76,Good Condition
+8,Dell-MS-24-95,f0:20:ff:48:0a:bc,HFFD514,13,Good Condition
+8,Dell-MS-24-104,f0:20:ff:47:f5:f4,8ZZ4214,41,Good Condition
+8,Dell-MS-24-12,d4:e9:8a:84:d2:5d,HSRD514,16,Good Condition
+8,Dell-MS-24-91,f0:20:ff:48:19:1c,75FD514,15,Good Condition
+8,Dell-MS-24-27,f0:20:ff:47:fe:c3,6TT4214,19,touch screen not working 
+8,Dell-CB-25-152,a0:d3:65:ad:a5:bb,HKJKD74,25-80,Good Condition
+8,Dell-MS-24-107,d4:e9:8a:84:f7:15,5MLD514,42,Good Condition
+8,Dell-MS-24-69,d4:e9:8a:84:df:87,H6FD514,49,Good Condition
+8,Dell-MS-24-70,f0:20:ff:47:e9:6f,6DFD514,38,Not retruned 
+8,Dell-MS-24-78,f0:20:ff:47:ed:84,GZZ4214,4,Good Condition
+8,Dell-MS-24-105,f0:20:ff:48:0e:b3,HWZ4214,48,Chipped front cover edge
+8,Dell-MS-24-67,d4:e9:8a:84:ed:6f,6SSC514,45,Chipped Back cover edge
+8,Dell-MS-24-111,f0:20:ff:47:fd:33,DGCD514,200,Good condition
+8,Dell-MS-24-37,e4:60:17:ce:1d:23,J74GF14,27,Good condition
+8,Dell-MS-23-30,04:cf:4b:c1:ac:6e,7SSF6F3,50,Good Condition
+8,Dell-MS-24-76,d4:e9:8a:84:d1:4a,JS9D514,6,Good Condition
+8,Dell-MS-24-15,d4:e9:8a:84:f0:3a,215GF14,,Good Condition
+8,Dell-MS-24-97,e4:60:17:cf:3c:44,DBFD514,,Board issue and screen 
+8,Dell-MS-23-84,64:d6:9a:0c:ca:51,9H4G6F3,,won't power up 
+\Grade 3 Laptops,Dell-CB-25-40,a0:d3:65:ad:e1:1b,160JD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-31,a0:d3:65:ad:a2:9b,1HCLD74,,Good condition
+\Grade 3 Laptops,Dell-CB-25-30,a0:d3:65:ae:18:9d,1JCLD74,,Good condition 
+\Grade 3 Laptops,Dell-CB-25-62,a0:d3:65:ad:3c:16,1VHJD74,,Good condition
+\Grade 3 Laptops,Dell-CB-25-12,a0:d3:65:ad:ac:2d,1YNKD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-59,a0:d3:65:ad:86:53,29JLD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-69,a0:d3:65:ae:21:35,2XZHD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-47,a0:d3:65:ae:19:15,2YZHD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-46,a0:d3:65:ad:a4:3a,34JJD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-34,a0:d3:65:ae:59:11,3ZZHD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-51,a0:d3:65:80:4c:e7,4BPJD74,,“left shift” key not functioning well 
+\Grade 3 Laptops,Dell-CB-25-57,a0:d3:65:ad:d6:a8,4JJLD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-67,a0:d3:65:ac:a7:10,4NBJD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-63,a0:d3:65:ae:0d:bc,55VJD74,,Good condition
+\Grade 3 Laptops,Dell-CB-25-44,a0:d3:65:ad:fe:ad,565JD74,,Good condition
+\Grade 3 Laptops,Dell-CB-25-60,a0:d3:65:ad:d3:1a,58PLD74,,Good condition
+\Grade 3 Laptops,Dell-CB-25-22,a0:d3:65:ad:90:a3,5HCLD74,,Good condition
+\Grade 3 Laptops,Dell-CB-25-71,a0:d3:65:ad:d6:a3,5HJLD74,,Good condition
+\Grade 3 Laptops,Dell-CB-25-16,a0:d3:65:ac:c2:ae,5JCLD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-68,a0:d3:65:ae:24:1e,5KVJD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-20,a0:d3:65:ad:e8:be,68JLD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-61,a0:d3:65:ad:e1:75,6PBJD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-03,a0:d3:65:ad:f8:b3,6RBJD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-39,a0:d3:65:ac:d6:f9,6XHJD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-72,a0:d3:65:ad:a3:09,6Y5LD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-52,a0:d3:65:ad:c4:1f,74JJD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-02,a0:d3:65:ad:f9:17,7C5JD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-155,a0:d3:65:ac:a7:74,7NBJD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-56,a0:d3:65:ad:a2:b9,806LD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-64,a0:d3:65:ae:56:c3,865JD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-45,a0:d3:65:ad:51:10,89PJD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-58,a0:d3:65:df:82:34,8CPKD74,,Keyboard and touch pad not working 
+\Grade 3 Laptops,Dell-CB-25-04,a0:d3:65:ad:90:35,8KBJD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-66,a0:d3:65:ab:e7:fd,9M1LD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-53,a0:d3:65:ad:f8:4a,9NBJD74,,Good condition
+\Grade 3 Laptops,Dell-CB-25-156,a0:d3:65:ad:ac:23,9S0KD74,,Good condition
+\Grade 3 Laptops,Dell-CB-25-33,a0:d3:65:ad:3b:d5,9TBJD74,,Good condition
+\Grade 3 Laptops,Dell-CB-25-17,a0:d3:65:ae:70:4a,B46LD74,,Good condition
+\Grade 3 Laptops,Dell-CB-25-49,a0:d3:65:ad:3c:25,BZHJD74,,Good condition
+\Grade 3 Laptops,Dell-CB-25-36,a0:d3:65:ad:99:68,C00JD74,,Good condition
+\Grade 3 Laptops,Dell-CB-25-06,a0:d3:65:ad:c3:43,C4PKD74,,Good condition
+\Grade 3 Laptops,Dell-CB-25-42,a0:d3:65:ad:b6:0f,C5PJD74,,Good condition
+\Grade 3 Laptops,Dell-CB-25-48,a0:d3:65:ad:d6:c6,C9CLD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-35,a0:d3:65:ad:2c:44,D35JD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-37,a0:d3:65:ad:a2:b4,DKVKD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-19,a0:d3:65:ad:3c:61,DWHJD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-32,a0:d3:65:ad:ac:37,F6PJD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-10,a0:d3:65:80:1e:7a,F8PJD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-07,a0:d3:65:ac:ff:a8,FJVKD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-25,a0:d3:65:ae:03:ad,FNBJD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-55,a0:d3:65:ae:19:7e,FP0KD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-65,a0:d3:65:ac:e3:79,FVHJD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-50,a0:d3:65:ad:a0:16,FWNJD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-09,a0:d3:65:ac:fa:df,FWZHD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-23,a0:d3:65:ad:c4:74,G0JJD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-01,a0:d3:65:ac:d0:eb,G1PKD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-18,a0:d3:65:ad:d5:f9,GHJLD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-14,a0:d3:65:ae:18:ed,GNHKD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-05,a0:d3:65:ad:fd:18,GXZHD74,, 
+\Grade 3 Laptops,Dell-CB-25-24,a0:d3:65:ad:c3:16,HBCLD74,,Good condition
+\Grade 3 Laptops,Dell-CB-25-15,a0:d3:65:ae:04:07,HZ4JD74,,Good condition
+\Grade 3 Laptops,Dell-CB-25-26,a0:d3:65:ac:91:53,J10JD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-43,a0:d3:65:ad:3e:be,J6BJD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-13,a0:d3:65:ae:19:bf,J7JLD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-54,a0:d3:65:ad:ab:a6,JCCLD74,,Good condition
+\Grade 3 Laptops,Dell-CB-25-70,a0:d3:65:ad:c2:ad,JGVKD74,,Good condition
+\Grade 3 Laptops,Dell-MS-22-72,48:68:4a:6d:df:5d,CBQN5R3,,Good condition
+\Grade 3 Laptops,Dell-CB-25-157,a0:d3:65:ae:23:f6,300JD74,,Good condition
+\Grade 3 Laptops,Dell-CB-25-89,a0:d3:65:80:02:8c,FRBKD74,,Good condition
+\Grade 3 Laptops,Dell-CB-25-27,a0:d3:65:ad:b1:5a,3WHJD74,,Good condition
+\Grade 3 Laptops,Dell-CB-25-82,a0:d3:65:ae:68:7a,430JD74,,Good condition
+\Grade 3 Laptops,Dell-CB-25-93,a0:d3:65:ad:ac:eb,59VKD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-21,a0:d3:65:ae:19:4c,GM0LD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-08,a0:d3:65:ad:ad:4a,HVHKD74,,Good Condition
+\Grade 3 Laptops,Dell-CB-25-28,a0:d3:65:ae:2a:36,J9VKD74,,Good condition
+\Grade 3 Laptops,Dell-CB-25-38,a0:d3:65:ac:e2:3e,425JD74,,Good condition
+\Grade 4 Laptops,Dell-MS-23-52,c4:d0:e3:20:b8:45,4GCF6F3,,Good Condition
+\Grade 4 Laptops,Dell-MS-23-103,d4:d8:53:47:03:01,10S51Z3,,Good Condition
+\Grade 4 Laptops,Dell-MS-23-51,04:cf:4b:c1:1c:f4,10TF6F3,,Good Condition
+\Grade 4 Laptops,Dell-MS-22-11,64:6e:e0:c9:b9:f4,17HTMJ3,,Good condition
+\Grade 4 Laptops,Dell-MS-23-13,04:cf:4b:bf:ad:c4,1M3G6F3,,Chipped front and back cover edges
+\Grade 4 Laptops,Dell-MS-23-25,04:cf:4b:bf:5f:68,1SXF6F3,,Chipped back cover edge
+\Grade 4 Laptops,Dell-CB-25-160,a0:d3:65:ad:a0:02,2DJLD74,,Good condition
+\Grade 4 Laptops,Dell-CB-25-159,a0:d3:65:ae:01:3c,B2JJD74,,Good condition
+\Grade 4 Laptops,Dell-CB-25-158,a0:d3:65:ae:01:14,JZHJD74,,Good condition
+\Grade 4 Laptops,Dell-MS-23-104,f0:d4:15:39:15:84,1YR51Z3,,Good condition
+\Grade 4 Laptops,Dell-MS-23-58,c4:d0:e3:20:eb:df,22CF6F3,,Good Condition
+\Grade 4 Laptops,Dell-MS-23-47,04:cf:4b:c2:7e:41,135G6F3,,Good Condition
+\Grade 4 Laptops,Dell-MS-23-76,04:cf:4b:c2:91:83,2RMF6F3,,Good Condition
+\Grade 4 Laptops,Dell-MS-22-28,64:6e:e0:c8:2c:83,2V9TMJ3,,Slite Crack on screen back cover and  Chipped Back Cover Edge
+\Grade 4 Laptops,Dell-MS-23-57,ac:5a:fc:e7:ba:94,393F6F3,,Chipped Back Cover Edge
+\Grade 4 Laptops,Dell-MS-23-112,d4:d8:53:44:cf:3c,3DL51Z3,,Keyboard not working
+\Grade 4 Laptops,Dell-MS-22-22,1c:99:57:e4:66:96,3ZJVMJ3,,Good Condition
+\Grade 4 Laptops,Dell-MS-22-33,28:d0:ea:b2:81:d5,2GHKNJ3,,Good Condition
+\Grade 4 Laptops,Dell-MS-22-10,28:d0:ea:b2:c2:53,4GXJNJ3,,Good Condition
+\Grade 4 Laptops,Dell-MS-23-28,c4:d0:e3:20:7c:bd,4KBF6F3,,Good Condition
+\Grade 4 Laptops,Dell-MS-22-02,64:6e:e0:ca:90:3b,5288NJ3,,Good Condition
+\Grade 4 Laptops,Dell-MS-22-16,1c:99:57:ea:0f:7e,57PTMJ3,,Good Condition
+\Grade 4 Laptops,Dell-MS-23-61,04:cf:4b:c1:43:8c,5CLF6F3,,Good Condition
+\Grade 4 Laptops,Dell-MS-23-17,04:cf:4b:c2:3d:28,5F5G6F3,,Good Condition
+\Grade 4 Laptops,Dell-MS-22-45,1c:99:57:e4:82:a7,46PTMJ3,,Broken right Hinge
+\Grade 4 Laptops,Dell-MS-23-106,d4:d8:53:44:6e:25,5GL51Z3,,Good Condition
+\Grade 4 Laptops,Dell-MS-23-49,c4:d0:e3:20:57:c9,72CF6F3,,Good Condition
+\Grade 4 Laptops,Dell-MS-23-45,04:cf:4b:c2:5d:80,7HDF6F3,,Good Condition
+\Grade 4 Laptops,Dell-ES-24-58,d4:e9:8a:84:d2:d0,7ZRD514,,Good condtion
+\Grade 4 Laptops,Dell-MS-23-07,04:cf:4b:84:53:55,82YF6F3,,Good condtion
+\Grade 4 Laptops,Dell-MS-22-53,1c:99:57:e4:6b:14,8GXJNJ3,,Good Condition
+\Grade 4 Laptops,Dell-MS-22-76,f8:9e:94:9f:b1:81,94MM5R3,,Good condition
+\Grade 4 Laptops,Dell-MS-22-49,28:d0:ea:b4:7f:30,5MYJNJ3,,Good condition
+\Grade 4 Laptops,Dell-ES-24-07,d4:e9:8a:84:cf:b0,714GF14,,Good condition
+\Grade 4 Laptops,Dell-MS-22-38,64:6e:e0:c9:b1:6b,95VJNJ3,,Good condition
+\Grade 4 Laptops,Dell-MS-23-67,04:cf:4b:c2:54:a7,994F6F3,,Good condition
+\Grade 4 Laptops,Dell-MS-23-22,04:cf:4b:c2:5d:99,CB1F6F3,,Good condition
+\Grade 4 Laptops,Dell-MS-23-10,04:cf:4b:c2:18:20,CVSF6F3,,"Broken left Hinge, keyboard not working "
+\Grade 4 Laptops,Dell-MS-23-113,f0:d4:15:00:e1:50,CWD51Z3,,Broken left Hinge
+\Grade 4 Laptops,Dell-MS-23-23,04:cf:4b:c2:05:79,CZXF6F3,,Chipped Back Cover Edge
+\Grade 4 Laptops,Dell-MS-23-100,70:d8:23:7f:88:b6,D6L51Z3,,losse keyboard cover
+\Grade 4 Laptops,Dell-MS-22-15,28:d0:ea:b1:12:6e,DGHTMJ3,,Good Condition
+\Grade 4 Laptops,Dell-MS-22-69,38:7a:0e:99:99:f9,C9QN5R3,,Good Condition
+\Grade 4 Laptops,Dell-ES-24-64,f0:20:ff:4e:d1:f3,DS8C514,,Good condition
+\Grade 4 Laptops,Dell-MS-23-102,70:d8:23:c1:71:ef,FFL51Z3,,Good condition
+\Grade 4 Laptops,Dell-MS-23-09,58:ce:2a:99:46:89,FK0F6F3,,Chipped back cover edge
+\Grade 4 Laptops,Dell-MS-23-78,04:cf:4b:c1:13:cb,FR3G6F3,,Good condition
+\Grade 4 Laptops,Dell-MS-23-31,04:cf:4b:c1:cd:89,GTSF6F3,,Chipped Back Cover Edge
+\Grade 4 Laptops,Dell-MS-23-38,04:cf:4b:c1:bf:e2,H7ZF6F3,,Chipped Back Cover Edge
+\Grade 4 Laptops,Dell-MS-22-61,64:6e:e0:c9:b1:61,H8WJNJ3,,Good condition
+\Grade 4 Laptops,Dell-MS-22-52,1c:99:57:e3:5a:8a,HNXJNJ3,,Good condition
+\Grade 4 Laptops,Dell-MS-23-71,c4:d0:e3:20:e5:54,FHSF6F3,,Good Condition
+\Grade 4 Laptops,Dell-MS-23-108,70:d8:23:7e:93:ca,HXR51Z3,,Good Condition
+\Grade 4 Laptops,Dell-MS-23-53,04:cf:4b:c1:cd:f7,J8DF6F3,,Good Condition
+\Grade 4 Laptops,Dell-MS-23-111,f0:d4:15:c3:4b:e1,JD751Z3,,Hinge Issue & Chipped Back Cover Edge
+\Grade 4 Laptops,Dell-MS-23-110,f0:d4:15:c2:01:91,GBY51Z3,,Good Condition
+\Grade 4 Laptops,Dell-ES-24-23,e4:60:17:ce:57:b1,J54GF14,,Good Condition
+\Grade 4 Laptops,Dell-MS-23-99,d4:d8:53:44:b4:2a,J5J41Z3,,Good Condition
+\Grade 4 Laptops,Dell-MS-23-64,04:cf:4b:c1:bf:83,3LLF6F3,,Chipped Back Cover Edge & Loosen Keyboard Cover
+\Grade 4 Laptops,Dell-MS-24-21,f0:20:ff:4e:ea:85,G58GF14,,Good Condition
+\Grade 4 Laptops,Dell-MS-23-88,04:cf:4b:c1:db:44,7W3G6F3,,"touch screen not working , keyboard key ""2""not functioning"
+\Grade 4 Laptops,Dell-MS-23-90,64:d6:9a:0c:d2:5d,4XYF6F3,,broken hinge
+\Grade 4 Laptops,Dell-MS-23-83,04:cf:4b:c1:4e:04,FJ1F6F3,,broken hinge
+\Grade 4 Laptops,Dell-MS-23-96,d4:d8:53:44:8a:5e,2CY51Z3,,good condition
+\Grade 4 Laptops,Dell-MS-23-33,04:cf:4b:bf:e7:17,7VSF6F3,,broken hinge and power button not functioning
+\Grade 4 Laptops,Dell-MS-23-70,c4:d0:e3:20:c0:b0,CBVD6F3,,good condition
+\Grade 4 Laptops,Dell-MS-22-79,c4:75:ab:63:ac:ef,9vj16r3,,good condition
+\Grade 5 Laptops,Dell-ES-24-39,f0:20:ff:4d:86:7c,2DFD514,,Good condition
+\Grade 5 Laptops,Dell-ES-24-31,e4:60:17:cd:37:28,2FFD514,,Good condition
+\Grade 5 Laptops,Dell-ES-24-56,f0:20:ff:48:11:88,30SD514,,Good condition
+\Grade 5 Laptops,Dell-ES-24-10,d4:e9:8a:84:fe:3b,3T2GF14,,Good condition
+\Grade 5 Laptops,Dell-ES-24-57,d4:e9:8a:84:eb:99,415GF14,,Chipped back cover edge
+\Grade 5 Laptops,Dell-ES-24-28,f0:20:ff:4c:73:f4,45GC514,,Good Condition
+\Grade 5 Laptops,Dell-ES-24-29,28:c5:d2:79:34:e3,46GC514,,Good Condition
+\Grade 5 Laptops,Dell-CB-25-147,a0:d3:65:ad:3b:f3,7YHJD74,,Good Condition
+\Grade 5 Laptops,Dell-ES-24-32,e4:60:17:cf:4d:c9,184GF14,,Good Condition
+\Grade 5 Laptops,Dell-ES-24-12,f0:20:ff:48:0c:ba,1NH4214,,Good Condition
+\Grade 5 Laptops,Dell-ES-24-52,28:c5:d2:8b:7c:61,2B4GF14,,Good Condition
+\Grade 5 Laptops,Dell-ES-24-43,f0:20:ff:4c:49:6f,4Q3C514,,Good condition
+\Grade 5 Laptops,Dell-ES-24-38,f0:20:ff:48:16:2e,4RLD514,,Good Condition
+\Grade 5 Laptops,Dell-ES-24-54,d4:e9:8a:85:04:ee,2YRD514,,Good condition
+\Grade 5 Laptops,Dell-ES-24-35,d4:e9:8a:84:f1:98,594GF14,,Good condition
+\Grade 5 Laptops,Dell-ES-24-27,f0:20:ff:47:ee:3d,3LMC514,,Good condition
+\Grade 5 Laptops,Dell-ES-24-36,d4:e9:8a:84:f0:94,5C4GF14,,Good condition
+\Grade 5 Laptops,Dell-ES-24-63,28:c5:d2:7d:96:6e,5R8C514,,Good Condition
+\Grade 5 Laptops,Dell-ES-24-50,f0:20:ff:48:12:5f,5VRD514,,Good Condition
+\Grade 5 Laptops,Dell-MS-23-91,04:cf:4b:c2:7a:ae,5YMF6F3,,Good Condition
+\Grade 5 Laptops,Dell-ES-24-08,f0:20:ff:49:ff:e3,65YD514,,Good Condition
+\Grade 5 Laptops,Dell-ES-24-18,d4:e9:8a:84:e5:d6,674GF14,,Good Condition
+\Grade 5 Laptops,Dell-ES-24-51,f0:20:ff:4a:05:1f,6CY3214,,Good Condition
+\Grade 5 Laptops,Dell-ES-24-55,d4:e9:8a:84:e7:52,71SD514,,Good Condition
+\Grade 5 Laptops,Dell-ES-24-04,d4:e9:8a:84:ef:f9,7C4GF14,,Good Condition
+\Grade 5 Laptops,Dell-ES-24-06,d4:e9:8a:88:b9:2c,7KCD514,,Good Condition
+\Grade 5 Laptops,Dell-ES-24-41,d4:e9:8a:85:03:0e,7MLD514,,Good Condition
+\Grade 5 Laptops,Dell-MS-23-03,04:cf:4b:c1:e0:ad,7QSF6F3,,Good Condition
+\Grade 5 Laptops,Dell-ES-24-01,d4:e9:8a:84:da:28,864GF14,,Good Condition
+\Grade 5 Laptops,Dell-ES-24-62,f0:20:ff:4d:21:7d,8W8C514,,Good Condition
+\Grade 5 Laptops,Dell-ES-24-20,d4:e9:8a:88:cf:84,924GF14,,Good Condition
+\Grade 5 Laptops,Dell-ES-24-46,e4:60:17:ce:cb:29,9S8C514,,Good Condition
+\Grade 5 Laptops,Dell-ES-24-53,f0:20:ff:4d:21:37,7DMC514,,Good Condition
+\Grade 5 Laptops,Dell-MS-23-101,70:d8:23:c1:71:cc,B9Y51Z3,,Good Condition
+\Grade 5 Laptops,Dell-ES-24-02,d4:e9:8a:84:ee:cd,C3YD514,,Good Condition
+\Grade 5 Laptops,Dell-ES-24-34,28:c5:d2:80:60:b5,7P3C514,,Good Condition
+\Grade 5 Laptops,Dell-ES-24-21,28:c5:d2:7f:0f:3f,C84GF14,,Good Condition
+\Grade 5 Laptops,Dell-ES-24-45,d4:e9:8a:84:fa:5d,82SD514,,Good condition
+\Grade 5 Laptops,Dell-ES-24-05,f0:20:ff:47:e5:cd,CWZ4214,,"Missing keyboard key “j"""
+\Grade 5 Laptops,Dell-ES-24-61,f0:20:ff:48:78:44,FP3C514,,Good Condition
+\Grade 5 Laptops,Dell-ES-24-17,f0:20:ff:47:f2:34,8XD3214,,Good Condition
+\Grade 5 Laptops,Dell-ES-24-30,d4:e9:8a:84:df:cd,FSLD514,,Good Condition
+\Grade 5 Laptops,Dell-ES-24-11,d4:e9:8a:85:01:5b,GV9D514,,Good condition
+\Grade 5 Laptops,Dell-ES-24-03,f0:20:ff:4c:62:c9,9X8C514,,Good condition
+\Grade 5 Laptops,Dell-ES-24-15,d4:e9:8a:85:02:cd,9YRD514,,Good condition
+\Grade 5 Laptops,Dell-ES-24-48,d4:e9:8a:84:d5:7d,B1S3214,,Good condition
+\Grade 5 Laptops,Dell-ES-24-26,f0:20:ff:48:14:3a,B25GF14,,Good condition
+\Grade 5 Laptops,Dell-ES-24-22,d4:e9:8a:84:f0:3f,B34GF14,,Good condition
+\Grade 5 Laptops,Dell-ES-24-47,e4:60:17:cf:e3:1a,GW9D514,,Good condition
+\Grade 5 Laptops,Dell-ES-24-13,d4:e9:8a:84:d5:73,BB4GF14,,Good Condition
+\Grade 5 Laptops,Dell-ES-24-16,f0:20:ff:47:e4:65,BTRD514,,Good Condition
+\Grade 5 Laptops,Dell-ES-24-19,e4:60:17:cd:62:a2,H24GF14,,Good Condition
+\Grade 5 Laptops,Dell-ES-24-09,f0:20:ff:49:51:56,HKMC514,,Good Condition
+\Grade 5 Laptops,Dell-ES-24-59,d4:e9:8a:84:e3:10,J0SD514,,Good Condition
+\Grade 5 Laptops,Dell-ES-24-37,d4:e9:8a:84:e5:63,D2SD514,,Good condition
+\Grade 5 Laptops,Dell-ES-24-40,d4:e9:8a:84:e6:94,J5FD514,,Good condition
+\Grade 5 Laptops,Dell-ES-24-33,f0:20:ff:4e:ec:6a,G48GF14,,Good Condition
+\Grade 5 Laptops,Dell-ES-24-24,f0:20:ff:47:e1:77,GB4GF14,,Good Condition
+\Grade 5 Laptops,Dell-ES-24-42,d4:e9:8a:84:d1:db,H8CD514,,Good Condition
+\Grade 5 Laptops,Dell-CB-25-96,a0:d3:65:ad:c2:da,2J0KD74,,Good Condition
+\Grade 5 Laptops,Dell-ES-24-44,f0:20:ff:4c:4e:42,GLXFF14,,Good Condition
+\Grade 5 Laptops,Dell-Es-24-60,d4:e9:8a:84:e8:e7,5YRD514,,"Broken screen, Keyboard not working and  Board issue, Missing keyboard key “j"""
+\Grade 5 Laptops,Dell-es-24-14,28:c5:d2:7a:a9:81,JLMC514,,Good condition
+\Grade 5 Laptops,Dell-es-24-49,f0:20:ff:47:fd:15,1LH4214,,Good condition
+,Dell-MS-22-75,48:68:4a:6b:c4:48,5NSM5R3,,good condition
+,Dell-MS-22-70,f8:9e:94:9c:1d:7d,225N5R3,,broken screen 
+,Dell-MS-22-74,38:7a:0e:99:1e:7a,8T126R3,,good condition
+,Dell-MS-22-07,64:6e:e0:c8:77:33,3CYSMJ3,,good condition
+,Dell-MS-23-14,c4:d0:e3:20:95:9f,1BVD6F3,,keyboard issue and camera not working 
+,Dell-CB-25-165,a0:d3:65:ad:c4:8d,31JJD74,,good condition

@@ -3,11 +3,11 @@
 **Triage. Repair. Deploy.**  
 *Inventory isn't real until it's assigned.*
 
-![ITAPS Dashboard](https://github.com/user-attachments/assets/85c24007-0ff1-4e09-8bb0-5180c389404e)
+![ITAPS Dashboard](./app/public/assets/hero.png)
 
-![Triage Hub](https://github.com/user-attachments/assets/e8fda599-6490-4649-b16a-11ba2bc094d2)
+![Triage Hub](./app/public/assets/triage.png)
 
-![Assignment Engine](https://github.com/user-attachments/assets/88833918-96e3-427c-aafc-2c47c7287ab7)
+![Assignment Engine](./app/public/assets/assignments.png)
 
 ITAPS is a **unified, high-speed inventory network** built for the modern **IT Department**.  
 

@@ -6,7 +6,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 async function capture() {
-  const browser = await puppeteer.launch({ defaultViewport: { width: 1440, height: 900 } });
+  const browser = await puppeteer.launch({ 
+    defaultViewport: { width: 1440, height: 900 },
+    executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
+  });
   const page = await browser.newPage();
   
   // Base output path
