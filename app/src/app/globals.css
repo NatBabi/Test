@@ -13,4 +13,90 @@
 body {
   background: var(--background);
   color: var(--foreground);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Material Symbols configuration */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.icon-fill {
+  font-variation-settings: 'FILL' 1;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Chart animations */
+@keyframes drawLine {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes barGrow {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.4s ease-out forwards;
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+/* Progress bar animation */
+.progress-bar-fill {
+  transition: width 2s ease-in-out;
+}
+
+/* Status badge colors */
+.status-healthy { background: #DCFCE7; color: #166534; }
+.status-in_repair { background: #FEF3C7; color: #92400E; }
+.status-awaiting_parts { background: #FEE2E2; color: #991B1B; }
+.status-triage { background: #E0E7FF; color: #3730A3; }
+.status-needs_powerwash { background: #F3E8FF; color: #6B21A8; }
+.status-donor { background: #F1F5F9; color: #475569; }
+.status-decommissioned { background: #F8FAFC; color: #94A3B8; }
+.status-new_intake { background: #DBEAFE; color: #1E40AF; }
+.status-completed { background: #DCFCE7; color: #166534; }
+.status-unrepairable { background: #FEE2E2; color: #991B1B; }
+
+/* Drag and drop area */
+.drop-zone-active {
+  border-color: #3B82F6 !important;
+  background-color: #EFF6FF !important;
 }
