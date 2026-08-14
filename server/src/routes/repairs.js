@@ -99,13 +99,13 @@ router.put('/:id/complete', async (req, res, next) => {
 
     // Mark repair complete
     await pool.query(
-      `UPDATE repairs SET status = 'completed', resolution_notes = ?, completed_at = NOW() WHERE id = ?`,
+      `UPDATE repairs SET status = 'completed', resolution_notes = ?, completed_at = datetime('now') WHERE id = ?`,
       [resolution_notes || repair.resolution_notes, req.params.id]
     );
 
     // Auto-mark device as healthy
     await pool.query(
-      `UPDATE devices SET status = 'healthy', \`condition\` = 'good' WHERE id = ?`,
+      `UPDATE devices SET status = 'healthy', condition = 'good' WHERE id = ?`,
       [repair.device_id]
     );
 
@@ -122,13 +122,13 @@ router.put('/:id/unrepairable', async (req, res, next) => {
     if (!repairs.length) return res.status(404).json({ error: 'Repair not found' });
 
     await pool.query(
-      `UPDATE repairs SET status = 'unrepairable', completed_at = NOW() WHERE id = ?`,
+      `UPDATE repairs SET status = 'unrepairable', completed_at = datetime('now') WHERE id = ?`,
       [req.params.id]
     );
 
     // Mark device as donor (available for parts)
     await pool.query(
-      `UPDATE devices SET status = 'donor', \`condition\` = 'parts_only' WHERE id = ?`,
+      `UPDATE devices SET status = 'donor', condition = 'parts_only' WHERE id = ?`,
       [repairs[0].device_id]
     );
 
@@ -165,10 +165,9 @@ router.post('/:id/donor', async (req, res, next) => {
     existingDamage.push(part_harvested);
     
     await pool.query(
-      `UPDATE devices SET status = 'donor', \`condition\` = 'parts_only', damage_details = ?, 
-       notes = CONCAT(COALESCE(notes, ''), '\n[Donor] ${part_harvested} harvested for repair #${req.params.id}')
-       WHERE id = ?`,
-      [JSON.stringify(existingDamage), donor_device_id]
+      `UPDATE devices SET status = 'donor', condition = 'parts_only', damage_details = ?, 
+       notes = COALESCE(notes, '') || '\n[Donor] Part harvested for repair #' || ? WHERE id = ?`,
+      [JSON.stringify(existingDamage), req.params.id, donor_device_id]
     );
 
     // Update repair status to in_progress since part is now available
@@ -192,7 +191,7 @@ router.get('/parts', async (req, res, next) => {
   try {
     const [parts] = await pool.query(
       `SELECT dl.part_harvested, COUNT(*) as available_count,
-              GROUP_CONCAT(DISTINCT d.model) as donor_models
+              group_concat(DISTINCT d.model) as donor_models
        FROM donor_links dl
        JOIN devices d ON dl.donor_device_id = d.id
        GROUP BY dl.part_harvested

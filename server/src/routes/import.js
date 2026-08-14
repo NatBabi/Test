@@ -63,7 +63,7 @@ router.post('/csv', upload.single('file'), async (req, res, next) => {
 
     // Get the current max asset tag number
     const [maxTag] = await pool.query(
-      `SELECT asset_tag FROM devices WHERE asset_tag LIKE 'AS-%' ORDER BY CAST(SUBSTRING(asset_tag, 4) AS UNSIGNED) DESC LIMIT 1`
+      `SELECT asset_tag FROM devices WHERE asset_tag LIKE 'AS-%' ORDER BY CAST(substr(asset_tag, 4) AS INTEGER) DESC LIMIT 1`
     );
     let nextTagNum = 1;
     if (maxTag.length) {

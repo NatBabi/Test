@@ -74,7 +74,7 @@ router.get('/stats', async (req, res, next) => {
       `SELECT COUNT(*) as count FROM devices WHERE status = 'donor'`
     );
     const [warrantyActive] = await pool.query(
-      `SELECT COUNT(*) as count FROM devices WHERE warranty_expiry > NOW()`
+      `SELECT COUNT(*) as count FROM devices WHERE warranty_expiry > datetime('now')`
     );
 
     const total = totalDevices[0].total;
@@ -102,20 +102,26 @@ router.get('/search', async (req, res, next) => {
     if (!q) return res.status(400).json({ error: 'Search query required' });
 
     const [devices] = await pool.query(
-      `SELECT d.*, 
-        (SELECT JSON_ARRAYAGG(JSON_OBJECT(
-          'student_name', CONCAT(s.first_name, ' ', s.last_name),
-          'student_id', s.student_id,
-          'grade', s.grade,
-          'academic_year', a.academic_year,
-          'assigned_date', a.assigned_date,
-          'returned_date', a.returned_date
-        )) FROM assignments a JOIN students s ON a.student_id = s.id WHERE a.device_id = d.id ORDER BY a.assigned_date DESC) as assignment_history
-      FROM devices d
-      WHERE d.asset_tag LIKE ? OR d.serial_number LIKE ?
-      LIMIT 5`,
+      `SELECT * FROM devices
+       WHERE asset_tag LIKE ? OR serial_number LIKE ?
+       LIMIT 5`,
       [`%${q}%`, `%${q}%`]
     );
+
+    // Fetch assignment history for each device
+    for (const device of devices) {
+      const [history] = await pool.query(
+        `SELECT s.first_name || ' ' || s.last_name as student_name,
+                s.student_id, s.grade,
+                a.academic_year, a.assigned_date, a.returned_date
+         FROM assignments a
+         JOIN students s ON a.student_id = s.id
+         WHERE a.device_id = ?
+         ORDER BY a.assigned_date DESC`,
+        [device.id]
+      );
+      device.assignment_history = history.length ? JSON.stringify(history) : null;
+    }
 
     res.json({ devices });
   } catch (err) {
@@ -177,7 +183,7 @@ router.put('/:id/status', async (req, res, next) => {
     const params = [];
 
     if (status) { updates.push('status = ?'); params.push(status); }
-    if (condition) { updates.push('`condition` = ?'); params.push(condition); }
+    if (condition) { updates.push('condition = ?'); params.push(condition); }
     if (damage_details !== undefined) { updates.push('damage_details = ?'); params.push(JSON.stringify(damage_details)); }
     if (notes !== undefined) { updates.push('notes = ?'); params.push(notes); }
 

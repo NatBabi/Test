@@ -28,13 +28,13 @@ router.post('/triage', async (req, res, next) => {
 
     // Update device status
     await pool.query(
-      'UPDATE devices SET status = ?, `condition` = ? WHERE id = ?',
+      'UPDATE devices SET status = ?, condition = ? WHERE id = ?',
       [newStatus, condition === 'healthy' ? 'good' : condition === 'minor_damage' ? 'fair' : 'poor', device_id]
     );
 
     // Create intake log
     const [result] = await pool.query(
-      `INSERT INTO intake_logs (device_id, triaged_by, previous_status, new_status, \`condition\`, triage_notes)
+      `INSERT INTO intake_logs (device_id, triaged_by, previous_status, new_status, condition, triage_notes)
        VALUES (?, ?, ?, ?, ?, ?)`,
       [device_id, triaged_by || null, previousStatus, newStatus, condition, triage_notes || null]
     );
